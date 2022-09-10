@@ -19,36 +19,39 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 @Controller
 public class HomeController {
 	
-//	@ResponseBody
-//	@RequestMapping("/test")
-//	public ObjectNode index() {
-//		ObjectMapper mapper = new ObjectMapper();
-//		ObjectNode objectNode = mapper.createObjectNode();
-//		objectNode.put("key", "value");
-//		objectNode.put("foo", "bar");
-//		objectNode.put("number", 42);
-//		
-//		return objectNode;
-//		
-//	}
-	
 	@ResponseBody
 	@RequestMapping("/test")
-	public ResponseEntity<String> responseEntity() {
-		final HttpHeaders httpHeaders = new HttpHeaders();
-		httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-		HttpStatus estado = HttpStatus.INTERNAL_SERVER_ERROR;
-		if(num = 1) {
-			HttpStatus estado = HttpStatus.OK;
-		}
+	public ObjectNode index() {
+		ObjectMapper mapper = new ObjectMapper();
+		ObjectNode objectNode = mapper.createObjectNode();
+		objectNode.put("key", "value");
+		objectNode.put("foo", "bar");
+		objectNode.put("number", 42);
 		
-		ResponseEntity<String> resultado = new ResponseEntity<String>("hola", httpHeaders, estado);
-	
-		
-		
-		return resultado;
+		return objectNode;
 		
 	}
+	
+	
+	
+	
+//	@ResponseBody
+//	@RequestMapping("/test")
+//	public ResponseEntity<String> responseEntity() {
+//		final HttpHeaders httpHeaders = new HttpHeaders();
+//		httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+//		HttpStatus estado = HttpStatus.INTERNAL_SERVER_ERROR;
+//		if(num = 1) {
+//			HttpStatus estado = HttpStatus.OK;
+//		}
+//		
+//		ResponseEntity<String> resultado = new ResponseEntity<String>("hola", httpHeaders, estado);
+//	
+//		
+//		
+//		return resultado;
+//		
+//	}
 	
 	
 	
