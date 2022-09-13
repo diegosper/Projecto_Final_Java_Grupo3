@@ -1,4 +1,4 @@
-.circle {
+.circlex {
   background: lightblue;
   border-radius: 50%;
   width: 50px;
@@ -142,3 +142,20 @@ body {
   .rosco>*:nth-of-type(25) {
     transform: rotate(615.6deg) translate(11.25em) rotate(-615.6deg);
   }
+
+  /*.rosco .circlex {
+    width: 2.25em;
+    height: 2.25em;
+    transition: all .3s ease-in-out;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: radial-gradient(circlex, #d900c7, #8d0013);
+    color: #fff;
+    line-height: 2.25em;
+    text-align: center;
+    text-decoration: none;
+    cursor: default; }
+    .rosco .circlex--success {
+      background-image: radial-gradient(circlex, #9ee379, #4caf50); }
+    .rosco .circlex--failure {
+      background-image: radial-gradient(circlex, #b9121b, #8e001c); }*/
