@@ -18,5 +18,7 @@ public class ProyectoFinalJavaGrupo3Application {
 		System.out.println("\nInicio de la app");
 		LOGGER.info("La appa funciona correctamente");
 		 	
-	}
+	
+	}	
+	
 }
