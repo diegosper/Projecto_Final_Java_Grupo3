@@ -1,3 +1,41 @@
+.principal {
+  background-color: palegreen;
+}
+
+.boton {
+  font-family: 'Dosis', sans-serif;
+  font-size: 40px;
+  display: block;
+  margin: 0px auto;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+button:hover {
+  background-color: lightskyblue;
+}
+
+.boton1 {
+  font-family: 'Dosis', sans-serif;
+  font-size: 35px;
+  display: block;
+  margin: 0px auto;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.nombre {
+  font-family: 'Rampart One', cursive;
+  font-size: 100px;
+  text-align: center;
+}
+.lema {
+  font-family: 'Dosis', sans-serif;
+  font-size: 50px;
+  text-align: center;
+}
+
+
 .circlex {
   background: lightblue;
   border-radius: 50%;
@@ -19,7 +57,7 @@ body {
   width: 100%;
 }
 
-@media (min-width: 54.75em) {
+ 
   .rosco {
     position: relative;
     width: 22.5em;
