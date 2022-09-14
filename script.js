@@ -138,11 +138,14 @@ let crearCercles = () => {
         let letra = this.letra;
         document.querySelector(`.${letra}`).classList.add('acierto');
         this.respuesto = true;
+        palabras_lateral[count].innerHTML = this.palabra;
+        aciertos++;
       }
       error(){
         let letra = this.letra;
         document.querySelector(`.${letra}`).classList.add('fallo');
         this.respuesto = false;
+        errores++;
       }
       mostrarDef(){
         let a = this.definicion;
@@ -158,8 +161,8 @@ let crearCercles = () => {
     let rosco = []
 
     rosco[0] = new LetraR("A","AAAAAA","Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate numquam nostrum voluptatibus quia perspiciatis odit eum magnam, dolorem maiores quaerat.");
-    rosco[1] = new LetraR("B", "BBBBBBB", "Definicion de la segunda palabra bla bla bla bla bla asdfg minfadf");
-    rosco[2] = new LetraR("C", "CCCCCCC", "Definicion de la palabra cccccccc bla bla bla bla bla asdfg minfadf");
+    rosco[1] = new LetraR("B", "BBBBBB", "Definicion de la segunda palabra bla bla bla bla bla asdfg minfadf");
+    rosco[2] = new LetraR("C", "CCCCCC", "Definicion de la palabra cccccccc bla bla bla bla bla asdfg minfadf");
     rosco[3] = new LetraR("D", "DDDDDD", "Definicion de la palabra DDDDDDDDDD bla bla bla bla bla asdfg minfadf");
     
     //ACTIVAR LETRA A AL INICIO DEL JUEGO
@@ -167,6 +170,10 @@ let letr = rosco[0];
 let count = 0; //Variable para saber en que letra esatmos (0=A, 1=B, 2=C, etc);
 letr.mostrarDef();
 letr.activar();
+let iguals = true;
+let aciertos = 0;
+let errores = 0;
+let palabras_lateral = document.querySelectorAll(".palabra"); //para poner las palabras en el panel amarillo
 
 //FUNCIÓN BOTON OK --> SI SON IGUALES SE MARCA EN VERDE Y SE ACTIVA LA SIGUIENTE LETRA. SI NO SON IGUALES SE MARCA EN ROJO Y SE ACTIVA TAMBIÉN LA SIGUIENTE LETRA
 let ok = () => {
@@ -174,21 +181,23 @@ let ok = () => {
   input.toLowerCase();
   let palabra = letr.palabra;
   palabra.toLowerCase();
-  let iguals = true;
+  iguals = true;
 
 if(input.length == palabra.length){
-    for(let i=0; i<input.length && iguals == true; i++){
-      if (palabra[i] != input[i]){
-          iguals == false;
-      }
-    if (iguals == true){
-      letr.acierto();
-    } else {
-      letr.error();
-    }
-    iguals = true;
+  for (let i=0; i<input.length && iguals == true; i++){
+    console.log(palabra[i]+", "+input[i])
+    iguals = palabra[i].toLowerCase() == input[i].toLowerCase();
+  }
+  if(iguals == false){
+    letr.error()
     count++;
-    }
+    iguals = true;
+    letr = rosco[count];
+  } else{
+    letr.acierto();
+    count++;
+    letr = rosco[count];
+  }
 } else{
   letr.error();
   count++;
