@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rosco</title>
+    <link rel="stylesheet" href="css\rosco.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;600;700&family=Orbitron:wght@500&family=Rampart+One&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body onresize="moverCirculos()">
+
+    <div class="cont_p_rosco">
+
+
+      
+      <header id="headerRosco" style="background-color: rgb(254, 138, 138)">
+        <h1>El Rosquete</h1>
+        <div id="ic_jugador">
+          <p>Invitado</p>
+          <img src="./img/profile-user.png" alt="" class="icoJugador" />
+        </div>
+      </header>
+
+      <section id="cont_rosco">
+    
+      </section>
+
+      <section id="definiciones">
+        <div class="disFlex">
+          <img src="img\hourglass.png" alt="" class="icoJugador" />
+          <p id="tiempo">0:00</p>
+        </div>
+
+        <div>
+          <label for="respuesta" id="labelRespuesta">Respuesta: </label>
+          <input
+            id="respuesta"
+            name="respuesta"
+            type="text"
+            placeholder="Escribe tu respuesta"
+          />
+          <button id="bResponder">OK</button>
+        </div>
+      </section>
+
+      <section id="cont_palabras">
+        <div id="palabras">
+          <h3 class="hPalabras">Palabras</h3>
+          <div class="flexpal">
+            <p class="palabra" id="pA">A: <span>?????</span></p>
+            <p class="palabra" id="pB">B: <span>?????</span></p>
+            <p class="palabra" id="pC">C: <span>?????</span></p>
+            <p class="palabra" id="pD">D: <span>?????</span></p>
+            <p class="palabra" id="pE">E: <span>?????</span></p>
+            <p class="palabra" id="pF">F: <span>?????</span></p>
+            <p class="palabra" id="pG">G: <span>?????</span></p>
+            <p class="palabra" id="pH">H: <span>?????</span></p>
+            <p class="palabra" id="pI">I: <span>?????</span></p>
+            <p class="palabra" id="pJ">J: <span>Clientelados</span></p>
+            <p class="palabra" id="pK">K: <span>Elefantoide</span></p>
+            <p class="palabra" id="pL">L: <span>?????</span></p>
+            <p class="palabra" id="pM">M: <span>?????</span></p>
+            <p class="palabra" id="pN">N: <span>?????</span></p>
+            <p class="palabra" id="pO">O: <span>?????</span></p>
+            <p class="palabra" id="pP">P: <span>?????</span></p>
+            <p class="palabra" id="pQ">Q: <span>?????</span></p>
+            <p class="palabra" id="pR">R: <span>?????</span></p>
+            <p class="palabra" id="pS">S: <span>?????</span></p>
+            <p class="palabra" id="pT">T: <span>?????</span></p>
+            <p class="palabra" id="pU">U: <span>Esternoclidomas</span></p>
+            <p class="palabra" id="pV">V: <span>?????</span></p>
+            <p class="palabra" id="pW">W: <span>?????</span></p>
+            <p class="palabra" id="pY">Y: <span>?????</span></p>
+            <p class="palabra" id="pZ">Z: <span>Corteza</span></p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer id="footerRosco" style="background-color: yellow">
+      <p>Sobre el proyecto</p>
+      <p>¿Quienes somos?</p>
+    </footer>
+  </body>
+</html>
