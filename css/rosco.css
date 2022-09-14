@@ -1,0 +1,280 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Rampart One", cursive;
+}
+
+html {
+  margin: 0px;
+}
+
+p, li, label, input, button {
+  font-family: "Dosis", sans-serif;
+}
+
+.numero {
+  font-family: "Orbitron", sans-serif;
+}
+
+ul, li {
+  list-style: none;
+  margin-left: 12px;
+  padding-left: 0;
+}
+
+.disFlex {
+  width: 350px;
+  margin: 0px auto;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.cont_p_rosco {
+  width: 100%;
+  display: grid;
+  grid-template-areas: "headr headr" "rosco palabras" "def palabras";
+  grid-template-columns: 2.5fr 1fr;
+  grid-template-rows: 10vh 65vh 20vh;
+}
+
+#headerRosco {
+  grid-area: headr;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px;
+}
+
+#headerRosco * {
+  margin: 0px;
+  padding: 0px;
+}
+
+#ic_jugador {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icoJugador {
+  height: 40px;
+}
+
+#cont_rosco {
+  grid-area: rosco;
+  position: relative;
+  padding: 0;
+}
+
+#definiciones {
+  grid-area: def;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+#defn {
+  text-align: center;
+  margin: 0px 10px;
+}
+
+#cont_palabras {
+  grid-area: palabras;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#palabras {
+  width: 100%;
+  height: 95%;
+  border-radius: 12px;
+  padding: 15px 20px;
+  background-color: bisque;
+  overflow: auto;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.flexpal {
+  height: 82%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.palabra {
+  margin: 5px;
+}
+
+.hPalabras {
+  text-align: center;
+}
+
+#footerRosco {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0px 40px;
+  position: relative;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+
+div.circle {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  border: 2.5px solid aquamarine;
+  color: rgb(14, 81, 59);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -15px 0px 0px 0px;
+  background-color: rgba(127, 255, 212, 0.183);
+}
+div.circle p {
+  margin: 0;
+  padding: 0;
+}
+
+div.activo {
+  background-color: aquamarine;
+  border-color: rgb(14, 81, 59);
+}
+
+div.acierto {
+  background-color: rgb(152, 251, 152);
+  border-color: rgb(14, 81, 59);
+}
+
+div.fallo {
+  background-color: rgb(247, 89, 89);
+  border-color: rgb(14, 81, 59);
+}
+
+#respuesta {
+  width: 25vw;
+}
+
+button {
+  background-color: rgba(127, 255, 212, 0.183);
+  border: 1px solid aquamarine;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 2px 20px;
+  color: rgb(14, 81, 59);
+  font-size: 18px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: aquamarine;
+}
+
+button:active {
+  border-color: rgb(14, 81, 59);
+}
+
+input {
+  border: none;
+  border-bottom: solid 2px aquamarine;
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+label {
+  color: rgb(14, 81, 59);
+  font-size: 18px;
+}
+
+.br {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+.centerMobile {
+  display: inline;
+}
+
+#crono {
+  display: block;
+  width: 79px;
+  font-size: 50px;
+  margin: 0px;
+}
+
+@media all and (max-width: 960px) {
+  .cont_p_rosco {
+    width: 100%;
+    display: grid;
+    grid-template-areas: "headr headr" "rosco palabras" "def palabras";
+    grid-template-columns: 1.8fr 1fr;
+    grid-template-rows: 10vh 65vh 20vh;
+  }
+  #crono {
+    font-size: 35px;
+  }
+  input {
+    width: 130px;
+  }
+  .center {
+    margin: 0px auto;
+  }
+}
+@media all and (max-width: 760px) {
+  h1 {
+    font-size: 25px;
+  }
+  .cont_p_rosco {
+    width: 100%;
+    display: grid;
+    grid-template-areas: "headr" "rosco" "def" "palabras";
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 350px 180px 545px;
+  }
+  div.circle {
+    margin: 4px 8px;
+    height: 29px;
+    width: 29px;
+  }
+  .br {
+    display: block;
+  }
+  .centerMobile {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+  }
+  .disFlex {
+    margin-top: 20px;
+  }
+}/*# sourceMappingURL=rosco.css.map */
