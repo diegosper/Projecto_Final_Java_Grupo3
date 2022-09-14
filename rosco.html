@@ -23,7 +23,7 @@
 
       
       <header id="headerRosco" style="background-color: rgb(254, 138, 138)">
-        <h1>El Rosquete</h1>
+        <h1><a href="index.html">El Rosquete</a></h1>
         <div id="ic_jugador">
           <p>Invitado</p>
           <img src="./img/profile-user.png" alt="" class="icoJugador" />
@@ -31,7 +31,8 @@
       </header>
 
       <section id="cont_rosco">
-    
+        <p id="definicion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias soluta eius est impedit distinctio tenetur inventore assumenda omnis expedita numquam.
+        </p>
       </section>
 
       <section id="definiciones">
@@ -41,15 +42,17 @@
         </div>
 
         <div>
-          <label for="respuesta" id="labelRespuesta">Respuesta: </label>
-          <input
-            id="respuesta"
-            name="respuesta"
-            type="text"
-            placeholder="Escribe tu respuesta"
-          />
-          <button type="submit" id="bResponder">OK</button>
-          <button id="bResponder">Paso!</button>
+          <div class="centerMobile">        
+            <label for="respuesta" id="labelRespuesta">Respuesta: </label>
+            <input id="respuesta" name="respuesta" type="text" placeholder="Tu respuesta"/>
+          </div>
+          
+          <div class="br"></div>
+          <div class="centerMobile">
+            <button type="submit" id="bResponder" onclick="ok()">OK</button>
+            <button id="bResponder" onclick="paso()">Paso!</button>
+          </div>
+            
         </div>
       </section>
 
