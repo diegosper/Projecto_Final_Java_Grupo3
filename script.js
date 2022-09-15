@@ -9,6 +9,34 @@ let x = Math.PI/13;
 
 //ESTO CREA EL ROSCO
 let crearCercles = () => {
+    //borrar rosco si existe  
+
+
+    if (document.querySelector(".circle")){
+      
+      let activas = document.querySelectorAll(".activo");
+      activas.forEach(element=>{
+        element.classList.remove("activo")
+      })
+      let fallos = document.querySelectorAll(".fallo");
+      fallos.forEach(element=>{
+        element.classList.remove("fallo");
+      })
+      let aciertos = document.querySelectorAll(".acierto");
+      aciertos.forEach(element=>{
+        element.classList.remove("acierto");
+      })
+
+      let letras = document.querySelectorAll(".circle");
+      letras.forEach(element =>{
+        element.remove();
+      })
+      letras[0].classList.add("activo");
+      count = 0;
+    }
+    
+
+
     let circulos = document.getElementById('cont_rosco');
     mainHeight = parseInt(window.getComputedStyle(circulos).height.slice(0, -2));
     mainWidth = parseInt(window.getComputedStyle(circulos).width.slice(0, -2));
@@ -118,6 +146,7 @@ let crearCercles = () => {
 
     //PRUEBA: DE MOMENTO SOLO FUNCIONAN LAS LETRAS A,B,C,D
     let player = "Invitado";
+    
 
 
     //CLASSE LETRA: Para añadir una palabra al rosco hay que ir añadiendolas al array "rosco". Para añadirla hay que hacer rosco[x] = new LetraR(letra, palabra, definicion, respuesto). Respuesto es false por defecto.
@@ -214,8 +243,11 @@ if(input.length == palabra.length){
     }
   }
   if(respondida == true){
-    alert("FIN DEL JUEGO");
+    //FIN PARTIDA
     clearInterval(interval);
+    partidas.puntuacion();
+    mostrarResultado();
+    // !!! SUBIR PUNTUACION A LA BASE DE DATOS
   }
 }
 }
@@ -236,23 +268,60 @@ let paso = () =>{
 
 
 
-// CLASE PARTIDA: clase para guardar la puntuacion
-
+// CLASE PARTIDA: clase para guardar la puntuacion --> CREAR AUTOMATICAMENT QUANDO LE DAS A JUGAR!!!!!!
+// countPartidas = 0;
 class Partida {
-  constructor(jugador,aciertos,errores,tiempo){
+  constructor(jugador){
     this.jugador = jugador;
-    this.aciertos = aciertos;
-    this.errores = errores;
-    this.tiempo = tiempo;
+    this.aciertos = 0;
+    this.errores = 0;
+    this.tiempo = 0;
   }
   puntuacion (){
     //aciertos - errores
     let puntuacion = (this.aciertos*1000)-(this.errores*100);
-      tpo = document.querySelector("#crono").innerHTML;
+      let tpo = document.querySelector("#crono").innerHTML;
       let minutos = parseInt(tpo.slice(0,2));
       let segundos = parseInt(tpo.slice(3,5));
       tpo = minutos*60+segundos;
     //penalización por tiempo
     puntuacion = puntuacion - tpo;
+    score = puntuacion;
   }
 } 
+// let partidas = [];
+partida = new Partida (player);
+let score;
+
+
+
+//MOSTRAR RESULTADO AL FINAL DEL JUEGO
+
+let mostrarResultado = () =>{
+  let pantallaFinal = document.querySelector("#pantallaResultado");
+  pantallaFinal.style.transform = "scale(1)";
+  pantallaFinal.style.opacity = "1";
+
+  let ac = document.querySelector("#r_aciertos");
+  let err = document.querySelector("#r_errores");
+  let  tiem = document.querySelector("#r_tiempo");
+
+  ac.innerHTML = partidas.aciertos;
+  err.innerHTML = partidas.errores;
+  tiem = partidas.tiempo;
+}
+let volverJugar = () =>{
+  let pantallaFinal = document.querySelector("#pantallaResultado");
+  pantallaFinal.style.transform = "scale(0)";
+  pantallaFinal.style.opacity = "0";
+
+  aciertos = 0;
+  errores = 0;
+  i = 0;
+  document.querySelector("#crono").innerHTML= "00:00";
+  partidas= new Partida(player);
+
+  //BORRAR ROSCO
+  crearCercles();
+
+}

@@ -7,7 +7,7 @@ a {
   cursor: pointer;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h4 {
   font-family: "Rampart One", cursive;
 }
 
@@ -15,7 +15,11 @@ html {
   margin: 0px;
 }
 
-p, li, label, input, button {
+.text_center {
+  text-align: center;
+}
+
+p, li, label, input, button, h3 {
   font-family: "Dosis", sans-serif;
 }
 
@@ -277,4 +281,57 @@ label {
   .disFlex {
     margin-top: 20px;
   }
+}
+#pantallaResultado {
+  background-color: aquamarine;
+  width: 90vw;
+  height: 80vh;
+  margin: 10vh 5vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 1s;
+  transition: transform 0.3s;
+}
+#pantallaResultado li {
+  width: 200px;
+  margin: 0px auto;
+  padding: 5px;
+}
+#pantallaResultado li:last-of-type {
+  padding-bottom: 10px;
+}
+#pantallaResultado li:last-of-type {
+  border-bottom: 1px solid rgb(14, 81, 59);
+}
+#pantallaResultado button {
+  display: block;
+  width: 200px;
+  margin: 0px auto;
+  background-color: white;
+  border-color: rgb(14, 81, 59);
+  padding: 5px;
+  margin-top: 25px;
+}
+#pantallaResultado button:hover {
+  background-color: rgb(14, 81, 59);
+  color: white;
+}
+#pantallaResultado button:active {
+  background-color: aquamarine;
+  color: rgb(14, 81, 59);
+}
+#pantallaResultado h3, #pantallaResultado p {
+  margin: 0px 0px 10px;
+}
+#pantallaResultado h2 {
+  margin-top: 0;
 }/*# sourceMappingURL=rosco.css.map */
