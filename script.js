@@ -9,9 +9,7 @@ let x = Math.PI/13;
 
 //ESTO CREA EL ROSCO
 let crearCercles = () => {
-    //borrar rosco si existe  
-
-
+    //borrar rosco si existe: elimina clases acierto, error, activo y elimina los circulos
     if (document.querySelector(".circle")){
       
       let activas = document.querySelectorAll(".activo");
@@ -34,9 +32,7 @@ let crearCercles = () => {
       letras[0].classList.add("activo");
       count = 0;
     }
-    
-
-
+    // crea los circulos
     let circulos = document.getElementById('cont_rosco');
     mainHeight = parseInt(window.getComputedStyle(circulos).height.slice(0, -2));
     mainWidth = parseInt(window.getComputedStyle(circulos).width.slice(0, -2));
@@ -69,7 +65,7 @@ let crearCercles = () => {
       circ.style.margin = `0,${mar},0,${mar}`;
     })
   };
-  crearCercles();
+  crearCercles(); //crea el rosco por primera vez
 
   // ESTO HACE QUE EL ROSCO SE REDIMENSIONE SEGUN EL TAMAÑO DE LA PANTALLA
   let moverCirculos = () => {
@@ -134,7 +130,7 @@ let crearCercles = () => {
       crono.innerHTML = `${minutos}:${segundos}`    
     }
 
-    let interval = setInterval(cronometro,1000); //esto hace que cada 1000 ms (= segundo) se ejecute la función cronometro.
+    let interval = setInterval(cronometro,1000); //esto hace que cada 1000 ms (= 1 segundo) se ejecute la función cronometro.
 // ************************************** FIN CRONOMETRO **************************************
 
 
@@ -144,13 +140,11 @@ let crearCercles = () => {
 
 
 
-    //PRUEBA: DE MOMENTO SOLO FUNCIONAN LAS LETRAS A,B,C,D
-    let player = "Invitado";
-    
-
+    //TEST: DE MOMENTO SOLO FUNCIONAN LAS LETRAS A,B,C,D
+    let player = "Invitado"; //falta la funcionalidad jugar como registrado;
 
     //CLASSE LETRA: Para añadir una palabra al rosco hay que ir añadiendolas al array "rosco". Para añadirla hay que hacer rosco[x] = new LetraR(letra, palabra, definicion, respuesto). Respuesto es false por defecto.
-
+    //Lo suyo seria que con la base de datos y la API se crease un objeto LetraR para cada letra del rosco de forma automática.
     class LetraR {
       constructor(letra, palabra, definicion){
         this.letra = letra;
@@ -189,15 +183,15 @@ let crearCercles = () => {
 
     let rosco = []
 
-    rosco[0] = new LetraR("A","AAAAAA","Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate numquam nostrum voluptatibus quia perspiciatis odit eum magnam, dolorem maiores quaerat.");
+    rosco[0] = new LetraR("A","AAAAAA","DEF PALABRA CON A: Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate numquam nostrum voluptatibus quia perspiciatis odit eum magnam, dolorem maiores quaerat.");
     rosco[1] = new LetraR("B", "BBBBBB", "Definicion de la segunda palabra bla bla bla bla bla asdfg minfadf");
     rosco[2] = new LetraR("C", "CCCCCC", "Definicion de la palabra cccccccc bla bla bla bla bla asdfg minfadf");
     rosco[3] = new LetraR("D", "DDDDDD", "Definicion de la palabra DDDDDDDDDD bla bla bla bla bla asdfg minfadf");
     
-    //ACTIVAR LETRA A AL INICIO DEL JUEGO
+    //ACTIVAR LETRA 'A' AL INICIO DEL JUEGO
 let letr = rosco[0];
 let count = 0; //Variable para saber en que letra esatmos (0=A, 1=B, 2=C, etc);
-letr.mostrarDef();
+letr.mostrarDef(); 
 letr.activar();
 let iguals = true;
 let aciertos = 0;
@@ -247,7 +241,7 @@ if(input.length == palabra.length){
     clearInterval(interval);
     partidas.puntuacion();
     mostrarResultado();
-    // !!! SUBIR PUNTUACION A LA BASE DE DATOS
+    // !!! (pendiente) SUBIR PUNTUACION A LA BASE DE DATOS
   }
 }
 }
@@ -268,7 +262,7 @@ let paso = () =>{
 
 
 
-// CLASE PARTIDA: clase para guardar la puntuacion --> CREAR AUTOMATICAMENT QUANDO LE DAS A JUGAR!!!!!!
+// CLASE PARTIDA: clase para guardar la puntuacion --> CREAR AUTOMATICAMENTE CUANDO LE DAS A JUGAR!!!!!!
 // countPartidas = 0;
 class Partida {
   constructor(jugador){
