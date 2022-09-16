@@ -20,13 +20,13 @@ import io.swagger.v3.oas.annotations.info.*;
 		)
 
 @SpringBootApplication
-public class ProyectoFinalJavaGrupo3Application {
+public class Rosquete {
 	
 	private static Logger LOGGER; 
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProyectoFinalJavaGrupo3Application.class, args);
-		LOGGER = (Logger) LoggerFactory.getLogger(ProyectoFinalJavaGrupo3Application.class);
+		SpringApplication.run(Rosquete.class, args);
+		LOGGER = (Logger) LoggerFactory.getLogger(Rosquete.class);
 		
 		System.out.println("\nInicio de la app");
 		LOGGER.info("La app funciona correctamente");
