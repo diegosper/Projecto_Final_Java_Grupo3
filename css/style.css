@@ -13,47 +13,42 @@
 }
 
 body {
-a{
-  text-decoration: none;
-  color: unset;
-}
-.principal {
-  background-color: palegreen;
-}
+    background-color: palegreen;
+  }
+  
+  .boton {
+    font-family: 'Dosis', sans-serif;
+    font-size: 35px;
+    display: block;
+    margin: 55px auto;
+    border-radius: 7px;
+    padding: 7px;
+  }
 
-.boton {
-  font-family: 'Dosis', sans-serif;
-  font-size: 35px;
-  display: block;
-  margin: 55px auto;
-  border-radius: 7px;
-  padding: 7px;
-}
+  button:hover {
+    background-color: lightskyblue;
+  }
 
-button:hover {
-  background-color: lightskyblue;
-}
+  .boton1 {
+    font-family: 'Dosis', sans-serif;
+    font-size: 35px;
+    display: block;
+    margin: 0px auto;
+    border-radius: 7px;
+    padding: 7px;
+  }
 
-.boton1 {
-  font-family: 'Dosis', sans-serif;
-  font-size: 35px;
-  display: block;
-  margin: 0px auto;
-  border-radius: 7px;
-  padding: 7px;
-}
+  .nombre {
+    font-family: 'Rampart One', cursive;
+    font-size: 100px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 130px;
+  }
 
-.nombre {
-  font-family: 'Rampart One', cursive;
-  font-size: 100px;
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 130px;
-}
-
-.lema {
-  font-family: 'Dosis', sans-serif;
-  font-size: 50px;
-  text-align: center;
-  margin-top: 30px;
-}
+  .lema {
+    font-family: 'Dosis', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 30px;
+  }
