@@ -23,7 +23,7 @@
 
       
       <header id="headerRosco" style="background-color: rgb(254, 138, 138)">
-        <h1>El Rosquete</h1>
+        <h1><a href="index.html">El Rosquete</a></h1>
         <div id="ic_jugador">
           <p>Invitado</p>
           <img src="./img/profile-user.png" alt="" class="icoJugador" />
@@ -31,24 +31,28 @@
       </header>
 
       <section id="cont_rosco">
-    
+        <p id="definicion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias soluta eius est impedit distinctio tenetur inventore assumenda omnis expedita numquam.
+        </p>
       </section>
 
       <section id="definiciones">
         <div class="disFlex">
           <img src="img\hourglass.png" alt="" class="icoJugador" />
-          <p id="tiempo">0:00</p>
+          <p id="crono">00:00</p>
         </div>
 
         <div>
-          <label for="respuesta" id="labelRespuesta">Respuesta: </label>
-          <input
-            id="respuesta"
-            name="respuesta"
-            type="text"
-            placeholder="Escribe tu respuesta"
-          />
-          <button id="bResponder">OK</button>
+          <div class="centerMobile">        
+            <label for="respuesta" id="labelRespuesta">Respuesta: </label>
+            <input id="respuesta" name="respuesta" type="text" placeholder="Tu respuesta"/>
+          </div>
+          
+          <div class="br"></div>
+          <div class="centerMobile">
+            <button type="submit" id="bResponder" onclick="ok()">OK</button>
+            <button id="bResponder" onclick="paso()">Paso!</button>
+          </div>
+            
         </div>
       </section>
 
@@ -86,9 +90,26 @@
       </section>
     </div>
 
-    <footer id="footerRosco" style="background-color: yellow">
+    <footer id="footerRosco" style="background-color: rgb(254, 254, 110)">
       <p>Sobre el proyecto</p>
       <p>¿Quienes somos?</p>
     </footer>
+
+
+  <!-- Pantalla que aparece cuando acaba el juego -->
+    <div id="pantallaResultado">
+      <h2 class="text_center">Fin del juego</h2>
+      <h3 class="text_center">Puntuacion</h3>
+      <p class="text_center">Jugador: Invitado</p>
+      <ul class="text_center">
+        <li>Aciertos: <span id="r_aciertos">0</span> </li>
+        <li>Errores: <span id="r_errores">0</span></li>
+        <li>No Contestadas:  <span id="r_nc">0</span></li>
+        <li>Tiempo:  <span id="r_tiempo">0</span></li>
+      </ul>
+      <p class="text_center"><strong>Puntuacion total:</strong>  <span id="r_puntuacion">1.00000</span></p>
+      <button onclick="volverJugar()">Volver a jugar</button>
+    </div>
+
   </body>
 </html>
