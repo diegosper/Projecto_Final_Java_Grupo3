@@ -436,3 +436,30 @@ let volverJugar = () =>{
   //BORRAR ROSCO
   crearCercles();
 }
+
+
+//CONNEXION API
+
+
+
+// let consumirAPI = (letra) => {
+//   let urlAPI =`https://api.chucknorris.io/jokes/random${letra}`;
+//   fetch(urlAPI)
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log(data);
+//   } )
+// }
+
+
+let consumirAPI = (letra) => {
+  let urlAPI =`https://loacalhost:8081/API/getWords`;
+  fetch(urlAPI)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  } )
+}
+
+
+
