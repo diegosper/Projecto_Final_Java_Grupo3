@@ -6,6 +6,4 @@ import org.springframework.stereotype.Repository;
 import com.project.entities.Word;
 
 @Repository
-public interface WordRepository extends JpaRepository<Word, Long>{
-
-}
+public interface WordRepository extends JpaRepository<Word, Long>{}

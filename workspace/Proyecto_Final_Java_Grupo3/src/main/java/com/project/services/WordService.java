@@ -1,7 +1,5 @@
 package com.project.services;
 
-import java.util.ArrayList;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +11,21 @@ import com.project.repository.WordRepository;
 @Service
 public class WordService {
 	@Autowired
-	WordRepository WordRepository;
+	WordRepository wordRepository;
 	
 	public List<Word> getWords(){
-		return WordRepository.findAll();
+		return wordRepository.findAll();
 	}
 	
+	public String getRandomWord(char letter){
+		List<Word> words = wordRepository.findAll();
+		
+		for (Word word : words) {
+			System.out.println(word.toString());
+			//System.out.println(word.getWord().startsWith(String.valueOf(letter)));
+		}
+		
+		return null;
+	}
 	
 }

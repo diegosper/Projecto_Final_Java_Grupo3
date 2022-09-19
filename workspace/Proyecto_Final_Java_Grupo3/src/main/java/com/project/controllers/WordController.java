@@ -27,4 +27,9 @@ public class WordController {
 	public List<Word> getWords() {
 		return WordService.getWords();
 	}
+	
+	@RequestMapping(value = "/getRandomWord", method = RequestMethod.GET)
+	public String getRandomWord() {
+		return WordService.getRandomWord('a');
+	}
 }

@@ -28,7 +28,6 @@ public class Word {
 
 	@Column (name = "letter")
 	private char letter;
-
 	
 	
 	public Long getId() {
@@ -70,8 +69,11 @@ public class Word {
 	public void setLetter(char letter) {
 		this.letter = letter;
 	}
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Word [id=" + id + ", word=" + word + ", category=" + category + ", question=" + question + ", letter="
+				+ letter + "]";
+	}
 	
 }
