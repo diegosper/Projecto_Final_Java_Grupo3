@@ -1,6 +1,5 @@
 package com.project.entities;
 
-import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,25 +27,14 @@ public class User{
 	@Column (name = "email")
 	private String 	email;
 	
-	public User () {}
-	
-	/*
+	public User() {}
+
 	public User (Long id, String username, String password, String email) {
-	
-//		setId(id);
-//		setNombre(username);
-//		setApellidos(password);
-//		setFechaNacimiento(email);
-		
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.email = email;
-		
 	}
-	
-	*/
-	
 	
 	public String getUsername() {
 		return username;
