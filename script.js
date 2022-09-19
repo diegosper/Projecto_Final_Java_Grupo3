@@ -30,19 +30,27 @@ let crearCercles = () => {
         element.remove();
       })
       letras[0].classList.add("activo");
-      count = 0;
+      let count = 0;
     }
     // crea los circulos
+    //posicionamiento
+    let roscoCentrarW = document.querySelector("#roscoCentrar").offsetWidth;
+    let roscoCentrarH = document.querySelector("#roscoCentrar").offsetHeight;
+
     let circulos = document.getElementById('cont_rosco');
     mainHeight = parseInt(window.getComputedStyle(circulos).height.slice(0, -2));
     mainWidth = parseInt(window.getComputedStyle(circulos).width.slice(0, -2));
     let a = mainWidth;
-    if(mainHeight > mainWidth){
-      let c = mainHeight;
-      mainHeight = mainWidth;
-      mainWidth = c; 
+    let comodinPos = 0;
+    if(roscoCentrarH > roscoCentrarW){
+      let c = roscoCentrarH;
+      roscoCentrarH = roscoCentrarW;
+      roscoCentrarW = c; 
+      comodinPos = 45;
+    } else{
+      comodinPos = 0;
     }
-    radius = mainHeight/2.3;
+    radius = roscoCentrarH/2.3;
     let theta = [0+PI, x*1+PI, x*2+PI, x*3+PI, x*4+PI, x*5+PI, x*6+PI, x*7+PI, x*8+PI, x*9+PI, x*10+PI, x*11+PI, x*12+PI, x*13+PI, x*14+PI, x*15+PI, x*16+PI, x*17+PI, x*18+PI, x*19+PI, x*20+PI, x*21+PI, x*22+PI, x*23+PI, x*24+PI, x*25+PI];
     theta = theta.reverse();
     let lletres = ["<p>A</p>","<p>B</p>","<p>C</p>", "<p>D</p>", "<p>E</p>","<p>F</p>","<p>G</p>","<p>H</p>","<p>I</p>","<p>J</p>","<p>K</p>","<p>L</p>","<p>M</p>","<p>N</p>","<p>O</p>","<p>P</p>","<p>Q</p>","<p>R</p>","<p>S</p>","<p>T</p>","<p>U</p>","<p>V</p>","<p>W</p>","<p>X</p>","<p>Y</p>","<p>Z</p>"];
@@ -52,11 +60,12 @@ let crearCercles = () => {
       circle.className = 'circle ' + abc[i];
       circle.innerHTML = lletres[i];
       circleArray.push(circle);
+      //posicionamiento
       circleArray[i].posx = (Math.round(radius * (Math.cos(theta[i])))-25) + 'px';
       circleArray[i].posy = Math.round(radius * (Math.sin(theta[i]))) + 'px';
       circleArray[i].style.position = "absolute";
-      circleArray[i].style.top = ((mainHeight / 2) - parseInt(circleArray[i].posy.slice(0, -2))) + 'px';
-      circleArray[i].style.left = ((mainHeight / 2) + parseInt(circleArray[i].posx.slice(0, -2))) + 'px';
+      circleArray[i].style.top = ((roscoCentrarH/2-45+comodinPos) - parseInt(circleArray[i].posy.slice(0, -2))) + 'px';
+      circleArray[i].style.left = ((roscoCentrarW/2) + parseInt(circleArray[i].posx.slice(0, -2))) + 'px';
       circulos.appendChild(circleArray[i]);
     }
     let mar = (1/2*a) - radius;
@@ -67,8 +76,31 @@ let crearCercles = () => {
   };
   crearCercles(); //crea el rosco por primera vez
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // ESTO HACE QUE EL ROSCO SE REDIMENSIONE SEGUN EL TAMAÑO DE LA PANTALLA
   let moverCirculos = () => {
+    //variables
+    let roscoCentrarW = document.querySelector("#roscoCentrar").offsetWidth;
+    let roscoCentrarH = document.querySelector("#roscoCentrar").offsetHeight;
+
     let circulos = document.getElementById('cont_rosco');
     circleArray;
     let theta = [0+PI, x*1+PI, x*2+PI, x*3+PI, x*4+PI, x*5+PI, x*6+PI, x*7+PI, x*8+PI, x*9+PI, x*10+PI, x*11+PI, x*12+PI, x*13+PI, x*14+PI, x*15+PI, x*16+PI, x*17+PI, x*18+PI, x*19+PI, x*20+PI, x*21+PI, x*22+PI, x*23+PI, x*24+PI, x*25+PI];
@@ -76,18 +108,21 @@ let crearCercles = () => {
     mainHeight = parseInt(window.getComputedStyle(circulos).height.slice(0, -2));
     mainWidth = parseInt(window.getComputedStyle(circulos).width.slice(0, -2));
     let a = mainWidth;
-    if(mainHeight > mainWidth){
-      let c = mainHeight;
-      mainHeight = mainWidth;
-      mainWidth = c; 
+    if(roscoCentrarH > roscoCentrarW){
+      let c = roscoCentrarH;
+      roscoCentrarH = roscoCentrarW;
+      roscoCentrarW = c;
+      comodinPos = document.querySelector(".circle").offsetHeight;
+    } else{
+      comodinPos = 0;
     }
-    radius = mainHeight/2.3;
+    radius = roscoCentrarH/2.3;
     for (let i = 0; i < 26; i++) {
       circleArray[i].posx = (Math.round(radius * (Math.cos(theta[i])))-25) + 'px';
       circleArray[i].posy = Math.round(radius * (Math.sin(theta[i]))) + 'px';
       circleArray[i].style.position = "absolute";
-      circleArray[i].style.top = ((mainHeight / 2) - parseInt(circleArray[i].posy.slice(0, -2))) + 'px';
-      circleArray[i].style.left = ((mainHeight / 2) + parseInt(circleArray[i].posx.slice(0, -2))) + 'px';
+      circleArray[i].style.top = ((roscoCentrarH/2-45+comodinPos) - parseInt(circleArray[i].posy.slice(0, -2))) + 'px';
+      circleArray[i].style.left = ((roscoCentrarW/2) + parseInt(circleArray[i].posx.slice(0, -2))) + 'px';
     }
     let mar = (1/2*a)-radius;
     let circ = document.querySelectorAll(".circle");
@@ -96,6 +131,89 @@ let crearCercles = () => {
     })
   }
 // ************************************** FIN ROSCO **************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -283,7 +401,7 @@ class Partida {
     score = puntuacion;
   }
 } 
-// let partidas = [];
+let partidas;
 partida = new Partida (player);
 let score;
 
@@ -317,5 +435,31 @@ let volverJugar = () =>{
 
   //BORRAR ROSCO
   crearCercles();
-
 }
+
+
+//CONNEXION API
+
+
+
+// let consumirAPI = (letra) => {
+//   let urlAPI =`https://api.chucknorris.io/jokes/random${letra}`;
+//   fetch(urlAPI)
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log(data);
+//   } )
+// }
+
+
+let consumirAPI = (letra) => {
+  let urlAPI =`https://loacalhost:8081/API/getWords`;
+  fetch(urlAPI)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  } )
+}
+
+
+
