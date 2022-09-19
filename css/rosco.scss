@@ -1,3 +1,12 @@
+//Valores grid
+$valorGrande: "10vh 65vh 20vh";
+$valorPeque:"80px 350px 180px 545px";
+
+//BREAKPOINTS
+$break1: "960px";
+$break2: "760px";
+
+
 //COLORES
 $oscuro:rgb(14, 81, 59);
 $azul: aquamarine;
@@ -253,7 +262,7 @@ label{
 
 
 //MEDIA QUERYS
-@media all and (max-width:960px){
+@media all and (max-width:$break1){
     .cont_p_rosco{
         width: 100%;
         display: grid;
@@ -278,7 +287,7 @@ label{
         margin: 0px auto;
     }
 }
-@media all and (max-width:760px){
+@media all and (max-width:$break2){
     h1{
         font-size: 25px;
     }
@@ -295,8 +304,8 @@ label{
     }
     div.circle{
         margin:4px 8px;
-        height: 29px;
-        width: 29px;
+        height: 32px;
+        width: 32px;
     }
     .br{
         display: block;
@@ -374,3 +383,53 @@ label{
 
 }
 
+
+////// PRUBAS
+#roscoCentrar{
+    position: relative;
+    width: 90%;
+    height: 100%;
+    padding-top: 45px;
+}s
+
+.circuloFake{
+    position: absolute;
+    top:-500px;
+    left: -500px;
+    opacity: 0;
+}
+#definicion{
+    display: inline-block;
+    text-align: center;
+    width: 300px;
+}
+#contenedorDef{
+    width: 100%;
+    height:55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media all and (max-width:$break2){
+    #contenedorDef{
+        height: 300px ;
+    }
+    #definicion{
+        width:200px
+    }
+}
+
+
+//FOOTER
+#sobre, #quienes{
+    background-color: unset;
+    border: none;
+    font-size: 16px;
+    padding: 8px;
+}
+#sobre:hover{
+    text-decoration: underline;
+}
+#quienes:hover{
+    text-decoration: underline;
+}
