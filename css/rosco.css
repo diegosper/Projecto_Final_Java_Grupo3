@@ -266,8 +266,8 @@ label {
   }
   div.circle {
     margin: 4px 8px;
-    height: 29px;
-    width: 29px;
+    height: 32px;
+    width: 32px;
   }
   .br {
     display: block;
@@ -334,4 +334,55 @@ label {
 }
 #pantallaResultado h2 {
   margin-top: 0;
+}
+
+#roscoCentrar {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  padding-top: 45px;
+}
+
+s .circuloFake {
+  position: absolute;
+  top: -500px;
+  left: -500px;
+  opacity: 0;
+}
+
+#definicion {
+  display: inline-block;
+  text-align: center;
+  width: 300px;
+}
+
+#contenedorDef {
+  width: 100%;
+  height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media all and (max-width: 760px) {
+  #contenedorDef {
+    height: 300px;
+  }
+  #definicion {
+    width: 200px;
+  }
+}
+#sobre, #quienes {
+  background-color: unset;
+  border: none;
+  font-size: 16px;
+  padding: 8px;
+}
+
+#sobre:hover {
+  text-decoration: underline;
+}
+
+#quienes:hover {
+  text-decoration: underline;
 }/*# sourceMappingURL=rosco.css.map */
