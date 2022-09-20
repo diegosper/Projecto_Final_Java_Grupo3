@@ -452,14 +452,20 @@ let volverJugar = () =>{
 // }
 
 
-let consumirAPI = (letra) => {
-  let urlAPI =`https://loacalhost:8081/API/getWords`;
-  fetch(urlAPI)
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  } )
+// let consumirAPI = () => {
+//   let urlAPI ="http://localhost:8081/api/getWords";
+//   fetch(urlAPI)  
+//   .then(response => response.json())
+//   .then(data => {
+//     console.log(data);
+//   })
+// }
+
+
+
+async function consumirAPI() {
+  const response = await fetch('http://localhost:8080/api/getWords');
+  const jsonResponse = await response.json();
+  console.log(jsonResponse);
+  return jsonResponse;
 }
-
-
-

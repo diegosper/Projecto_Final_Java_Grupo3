@@ -27,7 +27,7 @@ public class Word {
 	private String question;
 
 	@Column (name = "letter")
-	private char letter;
+	private String letter;
 	
 	
 	public Long getId() {
@@ -62,11 +62,11 @@ public class Word {
 		this.question = question;
 	}
 
-	public char getLetter() {
+	public String getLetter() {
 		return letter;
 	}
 
-	public void setLetter(char letter) {
+	public void setLetter(String letter) {
 		this.letter = letter;
 	}
 

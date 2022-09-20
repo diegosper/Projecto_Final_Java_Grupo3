@@ -33,4 +33,9 @@ public class UserService {
 		return usersDto;
 	}
 	
+	public void addUser(User user) {
+		userRepository.save(user);
+		
+	}
+	
 }

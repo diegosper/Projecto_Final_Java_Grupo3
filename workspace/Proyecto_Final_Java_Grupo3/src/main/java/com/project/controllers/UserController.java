@@ -3,12 +3,15 @@ package com.project.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.entities.User;
 import com.project.entities.Dtos.UserDto;
+import com.project.repository.UserRepository;
 import com.project.services.UserService;
 
 
@@ -22,8 +25,8 @@ public class UserController {
 	UserService userService;
 	
 	@RequestMapping(value = "/getUsers", method = RequestMethod.GET)
-	public List<User> getUsers(){
-		
+	public List<User> getUsers() {
+
 		return userService.getUsers();
 	}
 	
@@ -32,5 +35,12 @@ public class UserController {
 		
 		return userService.getUsersDto();
 	}
+	
+	@PostMapping("/userRegistration")
+	//method = RequestMethod.POST)
+	public void addUser(@RequestParam String username, String password, String email){
+		userService.addUser(new User(username, password, email));
+	}
+	
 	
 }
