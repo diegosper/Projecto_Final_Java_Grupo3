@@ -76,25 +76,6 @@ let crearCercles = () => {
   };
   crearCercles(); //crea el rosco por primera vez
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   // ESTO HACE QUE EL ROSCO SE REDIMENSIONE SEGUN EL TAMAÑO DE LA PANTALLA
   let moverCirculos = () => {
     //variables
@@ -258,6 +239,19 @@ let crearCercles = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     //TEST: DE MOMENTO SOLO FUNCIONAN LAS LETRAS A,B,C,D
     let player = "Invitado"; //falta la funcionalidad jugar como registrado;
 
@@ -272,18 +266,18 @@ let crearCercles = () => {
       }
       //A partir de aquí són metodos: funciones que toman las variables de la clase. El resultado de "usar" una clase es un objeto. Los metodos se usan con objeto.metodo(). 
       activar(){
-        let letra = this.letra;
+        let letra = this.letra.toUpperCase();
         document.querySelector(`.${letra}`).classList.add('activo');
       }
       acierto(){
-        let letra = this.letra;
+        let letra = this.letra.toUpperCase();
         document.querySelector(`.${letra}`).classList.add('acierto');
         this.respuesto = true;
         palabras_lateral[count].innerHTML = this.palabra;
         aciertos++;
       }
       error(){
-        let letra = this.letra;
+        let letra = this.letra.toUpperCase();
         document.querySelector(`.${letra}`).classList.add('fallo');
         this.respuesto = false;
         errores++;
@@ -299,24 +293,59 @@ let crearCercles = () => {
       }
     }
 
-    let rosco = []
+    //CONNEXION API
+let rellRosco= ["a","p"];
+let rosco = [];
+let asdf = false;
 
-    rosco[0] = new LetraR("A","AAAAAA","DEF PALABRA CON A: Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate numquam nostrum voluptatibus quia perspiciatis odit eum magnam, dolorem maiores quaerat.");
-    rosco[1] = new LetraR("B", "BBBBBB", "Definicion de la segunda palabra bla bla bla bla bla asdfg minfadf");
-    rosco[2] = new LetraR("C", "CCCCCC", "Definicion de la palabra cccccccc bla bla bla bla bla asdfg minfadf");
-    rosco[3] = new LetraR("D", "DDDDDD", "Definicion de la palabra DDDDDDDDDD bla bla bla bla bla asdfg minfadf");
-    
-    //ACTIVAR LETRA 'A' AL INICIO DEL JUEGO
-let letr = rosco[0];
+let llenarRosco = (letra) => {
+  let urlAPI =`http://localhost:8080/api/getRandomWord?letter=${letra}`;
+  fetch(urlAPI)  
+  .then(response => response.json())
+  .then(data => {
+   
+    let x = new LetraR(data.letter, data.word, data.question);
+    if(asdf == false){
+      x.mostrarDef();
+      x.activar()
+      letr = x;
+      asdf = true;
+    }
+    rosco.push(x);
+  })
+  
+}
+
+rellRosco.forEach(
+  let => llenarRosco(let)
+)
+
+
+
+// //ACTIVAR LETRA 'A' AL INICIO DEL JUEGO
+
+let letr;
 let count = 0; //Variable para saber en que letra esatmos (0=A, 1=B, 2=C, etc);
-letr.mostrarDef(); 
-letr.activar();
 let iguals = true;
 let aciertos = 0;
 let errores = 0;
 let palabras_lateral = document.querySelectorAll(".palabra"); //para poner las palabras en el panel amarillo
 
+
+    // let rosco = []
+
+    // rosco[0] = new LetraR("A","AAAAAA","DEF PALABRA CON A: Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate numquam nostrum voluptatibus quia perspiciatis odit eum magnam, dolorem maiores quaerat.");
+    // rosco[1] = new LetraR("B", "BBBBBB", "Definicion de la segunda palabra bla bla bla bla bla asdfg minfadf");
+    // rosco[2] = new LetraR("C", "CCCCCC", "Definicion de la palabra cccccccc bla bla bla bla bla asdfg minfadf");
+    // rosco[3] = new LetraR("D", "DDDDDD", "Definicion de la palabra DDDDDDDDDD bla bla bla bla bla asdfg minfadf");
+    
+
 //FUNCIÓN BOTON OK --> SI SON IGUALES SE MARCA EN VERDE Y SE ACTIVA LA SIGUIENTE LETRA. SI NO SON IGUALES SE MARCA EN ROJO Y SE ACTIVA TAMBIÉN LA SIGUIENTE LETRA
+
+
+
+// EEEEEEEEEEEEEEEEEEEEEEEEEEEEERROOOOOOOOOOOOOOOOOR
+
 let ok = () => {
   let input = document.querySelector("#respuesta").value;
   input.toLowerCase();
@@ -347,6 +376,7 @@ if(input.length == palabra.length){
   for(let i=0; i<rosco.length && respondida == true ; i++){
     if(letr.respuesto == false){
       letr.activar();
+      count++;
       letr.mostrarDef();
       respondida = false;
     } else{
@@ -438,34 +468,3 @@ let volverJugar = () =>{
 }
 
 
-//CONNEXION API
-
-
-
-// let consumirAPI = (letra) => {
-//   let urlAPI =`https://api.chucknorris.io/jokes/random${letra}`;
-//   fetch(urlAPI)
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data);
-//   } )
-// }
-
-
-// let consumirAPI = () => {
-//   let urlAPI ="http://localhost:8081/api/getWords";
-//   fetch(urlAPI)  
-//   .then(response => response.json())
-//   .then(data => {
-//     console.log(data);
-//   })
-// }
-
-
-
-async function consumirAPI() {
-  const response = await fetch('http://localhost:8080/api/getWords');
-  const jsonResponse = await response.json();
-  console.log(jsonResponse);
-  return jsonResponse;
-}
