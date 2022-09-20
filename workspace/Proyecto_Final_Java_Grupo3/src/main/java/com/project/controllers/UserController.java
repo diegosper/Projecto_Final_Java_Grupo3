@@ -3,7 +3,7 @@ package com.project.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project.entities.User;
 import com.project.entities.Dtos.UserDto;
-import com.project.repository.UserRepository;
 import com.project.services.UserService;
 
 
@@ -36,11 +35,26 @@ public class UserController {
 		return userService.getUsersDto();
 	}
 	
-	@PostMapping("/userRegistration")
-	//method = RequestMethod.POST)
-	public void addUser(@RequestParam String username, String password, String email){
-		userService.addUser(new User(username, password, email));
+	@RequestMapping(value = "/userRegistration", method = RequestMethod.POST)
+	public String addUser(@RequestBody User user){//(@RequestParam String username, String password, String email){
+		String mensaje;
+		try {
+			userService.addUser(user);
+			mensaje = "Usuario agregado con éxito";
+		} catch (Exception e) {
+			// TODO: handle exception
+			mensaje = e.getMessage();
+		} 
+		return mensaje;
 	}
+	
+	@RequestMapping(value = "/deleteUser", method = RequestMethod.DELETE)
+	public String deleteUser(@RequestParam Long id){
+		userService.deleteUser(id);
+		
+		return id.toString();
+	}
+	
 	
 	
 }
