@@ -6,17 +6,97 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Montserrat:wght@400;600&family=Rampart+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.sgstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dosis&family=Montserrat:wght@400;600&family=Rampart+One&display=swap"
+        rel="stylesheet">
+    <script src="formularios.js" defer></script>
 </head>
 
 <body>
-    <h1 class="nombre">BE SMART</h1>
-    <h2 class="lema">"LO QUE NO TE ENSEÑAN EN LA ESCUELA"</h2>
-    <button class="boton">INICIAR SESIÓN</button>
-    <button class="boton1">JUGAR COMO INVITADO</button>
-    <button class="botton2">CREAR PERFIL</button>
+    <h1 class="nombre">EL ROSQUETE</h1>
+    <h2 class="lema">"Lo que no te enseñan en la Escuela"</h2>
+    <button class="boton" onclick="mostrarPopUp('popUp3')">INICIAR SESIÓN</button>
+    <button class="boton1" onclick="mostrarPopUp('popUp1')">JUGAR COMO INVITADO</button>
+    <button class="botton2" onclick="mostrarPopUp('popUp2')">CREAR PERFIL</button>
+
+    <div class="popUp" id="popUp1">
+        <form action="#">
+            <button class="cruz" onclick="cerrar('popUp1')">&#10005</button>
+            <h1>Registro</h1>
+            <div>
+                <strong><label>Usuario</label><br></strong>
+                <input type="text">
+            </div>
+            <br>
+            <div>
+                <strong><label>Constraseña</label><br></strong>
+                <input type="password">
+            </div>
+            <br>
+            <div>
+                <strong><label>Correo electrónico</label><br></strong>
+                <input type="email">
+            </div>
+            <br>
+            <div>
+                <strong><label>Fecha de nacimiento</label><br></strong>
+                <input type="date">
+            </div>
+            <br>
+            <br>
+            <button onclick="popUp1">Enviar</button>
+        </form>
+    </div>
+
+    <div class="popUp" id="popUp2">
+        <form action="#">
+            <button class="cruz" onclick="cerrar('popUp2')">&#10005</button>
+            <h1>Registro</h1>
+            <div>
+                <strong><label>Usuario</label><br></strong>
+                <input type="text">
+            </div>
+            <br>
+            <div>
+                <strong><label>Constraseña</label><br></strong>
+                <input type="password">
+            </div>
+            <br>
+            <div>
+                <strong><label>Correo electrónico</label><br></strong>
+                <input type="email">
+            </div>
+            <br>
+            <div>
+                <strong><label>Fecha de nacimiento</label><br></strong>
+                <input type="date">
+            </div>
+            <br>
+            <br>
+            <button onclick="popUp2">Enviar</button>
+        </form>
+    </div>
+    <div class="popUp" id="popUp3">
+        <form action="#">
+            <button class="cruz" onclick="cerrar('popUp3')">&#10005</button>
+            <h1>Iniciar sesión</h1>
+            <div>
+                <strong><label>Usuario</label><br></strong>
+                <input type="text">
+            </div>
+            <br>
+            <div>
+                <strong><label>Constraseña</label><br></strong>
+                <input type="password">
+            </div>
+            <br>
+            <button onclick="popUp3">Enviar</button>
+        </form>
+    </div>
+
 </body>
+
 </html>
