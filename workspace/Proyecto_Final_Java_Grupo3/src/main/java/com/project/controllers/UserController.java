@@ -5,10 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.project.entities.User;
 import com.project.entities.Dtos.UserDto;
+import com.project.repository.UserRepository;
 import com.project.services.UserService;
 
 
@@ -32,5 +34,11 @@ public class UserController {
 		
 		return userService.getUsersDto();
 	}
+	
+	@RequestMapping(value = "/userRegistration", method = RequestMethod.PUT)
+	public void addUser(@RequestParam String username, String password, String email){
+		userService.addUser(new User(username, password, email));
+	}
+	
 	
 }
