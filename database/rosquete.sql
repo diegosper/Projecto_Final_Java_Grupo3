@@ -49,10 +49,32 @@ INSERT INTO db_rosquete.category VALUES
 ('2','secondCategory');
 
 INSERT INTO db_rosquete.words VALUES
-('1', 'palabra1', '2', 'esta es la palabra Nº1', 'p'),
-('2', 'palabra2', '2', 'esta es la palabra Nº2', 'p'),
-('3', 'palabra3', '1', 'esta es la palabra Nº3', 'p'),
-('4', 'alabra4', '1', 'esta es la palabra Nº4', 'a');
+('1', 'palabra1', '2', 'esta es la palabra Nº1', 'a'),
+('2', 'palabra2', '2', 'esta es la palabra Nº2', 'b'),
+('3', 'palabra3', '1', 'esta es la palabra Nº3', 'c'),
+('4', 'palabra4', '1', 'esta es la palabra Nº4', 'd');
+('5', 'palabra5', '1', 'esta es la palabra Nº5', 'e');
+('6', 'palabra6', '1', 'esta es la palabra Nº6', 'f');
+('7', 'palabra7', '1', 'esta es la palabra Nº7', 'g');
+('8', 'palabra8', '1', 'esta es la palabra Nº8', 'h');
+('9', 'palabra9', '1', 'esta es la palabra Nº9', 'i');
+('10', 'palabra10', '1', 'esta es la palabra Nº10', 'j');
+('11', 'palabra11', '1', 'esta es la palabra Nº11', 'k');
+('12', 'palabra12', '1', 'esta es la palabra Nº12', 'l');
+('13', 'palabra13', '1', 'esta es la palabra Nº13', 'm');
+('14', 'palabra14', '1', 'esta es la palabra Nº14', 'n');
+('15', 'palabra15', '1', 'esta es la palabra Nº15', 'o');
+('16', 'palabra16', '1', 'esta es la palabra Nº16', 'p');
+('17', 'palabra17', '1', 'esta es la palabra Nº17', 'q');
+('18', 'palabra18', '1', 'esta es la palabra Nº18', 'r');
+('19', 'palabra19', '1', 'esta es la palabra Nº19', 's');
+('20', 'palabra20', '1', 'esta es la palabra Nº20', 't');
+('21', 'palabra21', '1', 'esta es la palabra Nº21', 'u');
+('22', 'palabra22', '1', 'esta es la palabra Nº22', 'v');
+('23', 'palabra23', '1', 'esta es la palabra Nº23', 'w');
+('24', 'palabra24', '1', 'esta es la palabra Nº24', 'x');
+('25', 'palabra25', '1', 'esta es la palabra Nº25', 'y');
+('26', 'palabra26', '1', 'esta es la palabra Nº26', 'z');
 
 SELECT * FROM users;
 SELECT * FROM words;
