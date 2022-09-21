@@ -7,7 +7,8 @@ CREATE TABLE IF NOT EXISTS users (
 	user_id		INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	username 	VARCHAR (50) UNIQUE NOT NULL,
 	password 	VARCHAR (50) NOT NULL,
-	email 		VARCHAR (255) UNIQUE NOT NULL
+	email 		VARCHAR (255) UNIQUE NOT NULL,
+    birth_date 	DATE
     /*
     created_on 	TIMESTAMP NOT NULL,
 	last_login 	TIMESTAMP NOT NULL
@@ -40,9 +41,9 @@ CREATE TABLE IF NOT EXISTS words (
 );
 
 INSERT INTO db_rosquete.users VALUES 
-('1','user1','user1','user1@pass.comusers'), 
-('2','user2','user2','user2@pass.comusers'),
-('3','diego','diego1','diego@gmail.com');
+('1','user1','user1','user1@pass.comusers','2000-08-12'), 
+('2','user2','user2','user2@pass.comusers','1994-06-10'),
+('3','diego','diego1','diego@gmail.com','1994-05-06');
 
 INSERT INTO db_rosquete.category VALUES
 ('1','firstCategory'),
@@ -53,6 +54,7 @@ INSERT INTO db_rosquete.words VALUES
 ('2', 'palabra2', '2', 'esta es la palabra Nº2', 'b'),
 ('3', 'palabra3', '1', 'esta es la palabra Nº3', 'c'),
 ('4', 'palabra4', '1', 'esta es la palabra Nº4', 'd');
+/*
 ('5', 'palabra5', '1', 'esta es la palabra Nº5', 'e');
 ('6', 'palabra6', '1', 'esta es la palabra Nº6', 'f');
 ('7', 'palabra7', '1', 'esta es la palabra Nº7', 'g');
@@ -75,6 +77,7 @@ INSERT INTO db_rosquete.words VALUES
 ('24', 'palabra24', '1', 'esta es la palabra Nº24', 'x');
 ('25', 'palabra25', '1', 'esta es la palabra Nº25', 'y');
 ('26', 'palabra26', '1', 'esta es la palabra Nº26', 'z');
+*/
 
 SELECT * FROM users;
 SELECT * FROM words;

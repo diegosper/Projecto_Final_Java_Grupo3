@@ -14,15 +14,16 @@
         href="https://fonts.googleapis.com/css2?family=Dosis&family=Montserrat:wght@400;600&family=Rampart+One&display=swap"
         rel="stylesheet">
     <script src="formularios.js" defer></script>
+    <script src="crearUsuario.js" defer></script>
 </head>
 
 <body>
     <h1 class="nombre">EL ROSQUETE</h1>
     <h2 class="lema">Lo que no te enseñan en la Escuela</h2>
     <button class="boton" onclick="mostrarPopUp('popUp3')">INICIAR SESIÓN</button>
-    <button class="boton1" onclick="mostrarPopUp('popUp1')">JUGAR COMO INVITADO</button>
+    <button class="boton1">JUGAR COMO INVITADO</button>
     <button class="botton2" onclick="mostrarPopUp('popUp2')">CREAR PERFIL</button>
-
+<!--
     <div class="popUp" id="popUp1">
         <form action="#">
             <button class="cruz" onclick="cerrar('popUp1')">&#10005</button>
@@ -51,33 +52,33 @@
             <button onclick="popUp1">Enviar</button>
         </form>
     </div>
-
+-->
     <div class="popUp" id="popUp2">
-        <form action="#">
+        <form action="http://localhost:8080/api/userRegistration" method="POST">
             <button class="cruz" onclick="cerrar('popUp2')">&#10005</button>
             <h1>Registro</h1>
             <div>
                 <strong><label>Usuario</label><br></strong>
-                <input type="text">
+                <input type="text" id="usuario">
             </div>
             <br>
             <div>
                 <strong><label>Constraseña</label><br></strong>
-                <input type="password">
+                <input type="password" id="password">
             </div>
             <br>
             <div>
                 <strong><label>Correo electrónico</label><br></strong>
-                <input type="email">
+                <input type="email" id="email">
             </div>
             <br>
             <div>
                 <strong><label>Fecha de nacimiento</label><br></strong>
-                <input type="date">
+                <input type="date" id="fechaNacimiento">
             </div>
             <br>
             <br>
-            <button onclick="popUp2">Enviar</button>
+            <button type="submit" onclick="userRegistration()">Enviar</button>
         </form>
     </div>
     <div class="popUp" id="popUp3">
@@ -97,7 +98,6 @@
             <button onclick="popUp3">Enviar</button>
         </form>
     </div>
-
 
 </body>
 

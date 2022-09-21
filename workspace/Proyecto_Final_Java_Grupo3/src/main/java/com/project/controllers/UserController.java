@@ -1,5 +1,6 @@
 package com.project.controllers;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,9 +40,9 @@ public class UserController {
 	}
 	
 	@PostMapping("/userRegistration")
-	public String addUser(@RequestBody String username, String password, String email){
+	public String addUser(@RequestBody String username, String password, String email, Date birth){
 		String mensaje;
-		User user = new User(username, password, email);
+		User user = new User(username, password, email, birth);
 		
 		System.out.println(user.toString());
 		try {
