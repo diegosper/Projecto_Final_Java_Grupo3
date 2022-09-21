@@ -37,5 +37,11 @@ public class UserService {
 		userRepository.save(user);
 		
 	}
+
+	public void deleteUser(Long id) {
+		// TODO Auto-generated method stub
+		userRepository.deleteById(id);
+		
+	}
 	
 }

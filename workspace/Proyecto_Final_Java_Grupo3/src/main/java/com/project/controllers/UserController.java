@@ -14,6 +14,8 @@ import com.project.entities.Dtos.UserDto;
 import com.project.repository.UserRepository;
 import com.project.services.UserService;
 
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
+
 
 //Como para todos los métodos voy a utiilziar @Controller + @ResponseBody,
 //puedo utilizar RestController únicamente
@@ -36,10 +38,24 @@ public class UserController {
 		return userService.getUsersDto();
 	}
 	
-	@PostMapping("/userRegistration")
-	//method = RequestMethod.POST)
-	public void addUser(@RequestParam String username, String password, String email){
-		userService.addUser(new User(username, password, email));
+	@RequestMapping(value = "/userRegistration", method = RequestMethod.POST)
+	public String addUser(@RequestBody User user){//(@RequestParam String username, String password, String email){
+		String mensaje;
+		try {
+			userService.addUser(user);
+			mensaje = "Usuario agregado con éxito";
+		} catch (Exception e) {
+			// TODO: handle exception
+			mensaje = e.getMessage();
+		} 
+		return mensaje;
+	}
+	
+	@RequestMapping(value = "/deleteUser", method = RequestMethod.DELETE)
+	public String deleteUser(@RequestParam Long id){
+		userService.deleteUser(id);
+
+		return id.toString();
 	}
 	
 	
