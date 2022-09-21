@@ -38,17 +38,21 @@ public class UserController {
 		return userService.getUsersDto();
 	}
 	
-	@RequestMapping(value = "/userRegistration", method = RequestMethod.POST)
-	public String addUser(@RequestBody User user){//(@RequestParam String username, String password, String email){
+	@PostMapping("/userRegistration") //, method = RequestMethod.POST)
+	public String addUser(@RequestBody String username, String password, String email){
 		String mensaje;
+		User user = new User(username, password, email);
+		
+		System.out.println(user.toString());
 		try {
 			userService.addUser(user);
 			mensaje = "Usuario agregado con éxito";
 		} catch (Exception e) {
 			// TODO: handle exception
-			mensaje = e.getMessage();
+			mensaje = "MENSAJE DE ERROR: " + e.getMessage();
 		} 
-		return mensaje;
+		
+		return user.toString();
 	}
 	
 	@RequestMapping(value = "/deleteUser", method = RequestMethod.DELETE)

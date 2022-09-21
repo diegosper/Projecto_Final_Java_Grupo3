@@ -44,6 +44,10 @@ INSERT INTO db_rosquete.users VALUES
 ('2','user2','user2','user2@pass.comusers'),
 ('3','diego','diego1','diego@gmail.com');
 
+INSERT INTO db_rosquete.category VALUES
+('1','firstCategory'),
+('2','secondCategory');
+
 INSERT INTO db_rosquete.words VALUES
 ('1', 'palabra1', '2', 'esta es la palabra Nº1', 'p'),
 ('2', 'palabra2', '2', 'esta es la palabra Nº2', 'p'),
