@@ -33,16 +33,18 @@ CREATE TABLE IF NOT EXISTS words (
 	word 		VARCHAR (500),
 	category_id INT UNSIGNED,
 	question 	VARCHAR (80),
-	letter 		VARCHAR (1)
-	/*
+	letter 		VARCHAR (1),
     CONSTRAINT fk_words FOREIGN KEY (category_id) REFERENCES category (category_id)
-	*/
 );
 
 INSERT INTO db_rosquete.users VALUES 
 ('1','user1','user1','user1@pass.comusers'), 
 ('2','user2','user2','user2@pass.comusers'),
 ('3','diego','diego1','diego@gmail.com');
+
+INSERT INTO db_rosquete.category VALUES
+('1','firstCategory'),
+('2','secondCategory');
 
 INSERT INTO db_rosquete.words VALUES
 ('1', 'palabra1', '2', 'esta es la palabra Nº1', 'p'),
