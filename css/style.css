@@ -48,7 +48,7 @@
 }
 
 body {
-  background-color: palegreen;
+  background-color: rgb(154, 152, 251);
 }
 
 .boton {
@@ -57,6 +57,7 @@ body {
   margin: 20px auto;
   border-radius: 7px;
   padding: 7px;
+  background-color: lightgoldenrodyellow;
   font-size: calc(3vw + 2px);
 }
 
@@ -70,6 +71,7 @@ button:hover {
   display: block;
   margin: 0px auto;
   border-radius: 7px;
+  background-color: lightgoldenrodyellow;
   padding: 7px;
 }
 
