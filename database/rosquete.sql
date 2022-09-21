@@ -33,10 +33,10 @@ CREATE TABLE IF NOT EXISTS words (
 	word 		VARCHAR (500),
 	category_id INT UNSIGNED,
 	question 	VARCHAR (80),
-	letter 		VARCHAR (1)
-	/*
+	letter 		VARCHAR (1),
+	
     CONSTRAINT fk_words FOREIGN KEY (category_id) REFERENCES category (category_id)
-	*/
+	
 );
 
 INSERT INTO db_rosquete.users VALUES 
