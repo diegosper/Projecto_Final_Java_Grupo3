@@ -1,7 +1,12 @@
-let click = () => window.alert();
-
-let formulario = () =>{
-    let formularioC = document.getElementById("#formularioC");
-    formularioC.style.transform = "scale(1)";
-    formularioC.style.opacity = "1";
+let mostrarPopUp = (param) =>{
+    let popUp = document.getElementById(param);
+    popUp.style.transform = "scale(1)";
+    popUp.style.opacity = "1";
   }
+
+let cerrar = (popup) => {
+  let popUpSel = document.querySelector(`#${popup}`);
+  popUpSel.style.transform= "scale(0)";
+  popUpSel.style.opacity = "0";
+
+}

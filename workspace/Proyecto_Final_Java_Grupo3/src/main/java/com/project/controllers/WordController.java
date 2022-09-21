@@ -25,6 +25,7 @@ public class WordController {
 	}
 	
 	@RequestMapping(value = "/getRandomWord", method = RequestMethod.GET)
+<<<<<<< HEAD
 	public Word getRandomWord(@RequestParam String letter) {
 		return WordService.getRandomWord(letter);
 	}
@@ -32,5 +33,9 @@ public class WordController {
 	@RequestMapping(value = "/getRandomWordByCategory", method = RequestMethod.GET)
 	public Word getRandomWord(@RequestParam String letter, Long idCategory) {
 		return WordService.getRandomWordByCategory(letter, idCategory);
+=======
+	public String getRandomWord() {
+		return WordService.getRandomWord("a");
+>>>>>>> jordi
 	}
 }
