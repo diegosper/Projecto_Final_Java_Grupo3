@@ -293,9 +293,11 @@ let crearCercles = () => {
       }
     }
 
-    //CONNEXION API
-let rellRosco= ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","n","o","p","q","r","s","t","u","w","x","y","z"];
-let rosco = [];
+
+
+    //LLENAR ROSCO DE PALABRAS CON LA API
+let rellRosco= ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+let rosco = new Array(26);
 let asdf = false;
 
 let llenarRosco = (letra) => {
@@ -303,7 +305,6 @@ let llenarRosco = (letra) => {
   fetch(urlAPI)  
   .then(response => response.json())
   .then(data => {
-   
     let x = new LetraR(data.letter, data.word, data.question);
     if(asdf == false){
       x.mostrarDef();
@@ -311,41 +312,114 @@ let llenarRosco = (letra) => {
       letr = x;
       asdf = true;
     }
-    rosco.push(x);
+    switch(letra) {
+      case 'a':
+        rosco[0] = x;
+        break;
+      case 'b':
+        rosco[1] = x;
+        break;
+      case 'c':
+        rosco[2] = x;
+        break;
+      case 'd':
+        rosco[3] = x;
+        break;
+      case 'e':
+        rosco[4]= x;
+        break;
+      case 'f':
+          rosco[5]= x;
+          break;
+      case 'g':
+        rosco[6]= x;
+        break;
+      case 'h':
+        rosco[7]= x;
+        break;
+      case 'i':
+        rosco[8]= x;
+        break;
+      case 'j':
+        rosco[9]= x;
+        break;
+      case 'k':
+        rosco[10]= x;
+        break;
+      case 'l':
+        rosco[11]= x;
+        break;
+      case 'm':
+        rosco[12]= x;
+        break;
+      case 'n':
+        rosco[13]= x;
+        break;
+      case 'o':
+        rosco[14]= x;
+        break;
+      case 'p':
+        rosco[15]= x;
+        break;
+      case 'q':
+        rosco[16]= x;
+        break;
+      case 'r':
+        rosco[17]= x;
+        break;
+      case 's':
+        rosco[18]= x;
+        break;
+      case 't':
+        rosco[19]= x;
+        break;
+      case 'u':
+        rosco[20]= x;
+        break;
+      case 'v':
+        rosco[21]= x;
+        break;
+      case 'w':
+        rosco[22]= x;
+        break;
+      case 'x':
+        rosco[23]= x;
+        break;
+      case 'y':
+        rosco[24]= x;
+        break;
+      case 'z':
+        rosco[25]= x;
+        break;
+    }
   })
-  
 }
+rellRosco.forEach(letra => llenarRosco(letra))
 
-rellRosco.forEach(
-  let => llenarRosco(let)
-)
+
+
 
 
 
 // //ACTIVAR LETRA 'A' AL INICIO DEL JUEGO
-
 let letr;
 let count = 0; //Variable para saber en que letra esatmos (0=A, 1=B, 2=C, etc);
+let aumentarCount = () => {
+  if (count < 25){
+    count++;
+  } else {
+    count = 0;
+  }  
+}
 let iguals = true;
 let aciertos = 0;
 let errores = 0;
 let palabras_lateral = document.querySelectorAll(".palabra"); //para poner las palabras en el panel amarillo
 
 
-    // let rosco = []
-
-    // rosco[0] = new LetraR("A","AAAAAA","DEF PALABRA CON A: Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate numquam nostrum voluptatibus quia perspiciatis odit eum magnam, dolorem maiores quaerat.");
-    // rosco[1] = new LetraR("B", "BBBBBB", "Definicion de la segunda palabra bla bla bla bla bla asdfg minfadf");
-    // rosco[2] = new LetraR("C", "CCCCCC", "Definicion de la palabra cccccccc bla bla bla bla bla asdfg minfadf");
-    // rosco[3] = new LetraR("D", "DDDDDD", "Definicion de la palabra DDDDDDDDDD bla bla bla bla bla asdfg minfadf");
-    
-
 //FUNCIÓN BOTON OK --> SI SON IGUALES SE MARCA EN VERDE Y SE ACTIVA LA SIGUIENTE LETRA. SI NO SON IGUALES SE MARCA EN ROJO Y SE ACTIVA TAMBIÉN LA SIGUIENTE LETRA
-
-
-
 // EEEEEEEEEEEEEEEEEEEEEEEEEEEEERROOOOOOOOOOOOOOOOOR
-
+count = 0; //empezamos en la palabra 'a'
 let ok = () => {
   let input = document.querySelector("#respuesta").value;
   input.toLowerCase();
@@ -360,27 +434,28 @@ if(input.length == palabra.length){
   }
   if(iguals == false){
     letr.error()
-    count++;
+    aumentarCount();
     iguals = true;
     letr = rosco[count];
+    letr.activar();
   } else{
     letr.acierto();
-    count++;
+    aumentarCount();
     letr = rosco[count];
+    letr.activar();
   }
-} else{
+} else{  
   letr.error();
-  count++;
+  aumentarCount();
   letr = rosco[count];
   let respondida = true;
   for(let i=0; i<rosco.length && respondida == true ; i++){
     if(letr.respuesto == false){
       letr.activar();
-      count++;
       letr.mostrarDef();
       respondida = false;
     } else{
-      count++;
+      aumentarCount();
       letr = rosco[count];
     }
   }
@@ -394,10 +469,19 @@ if(input.length == palabra.length){
 }
 }
 
+
+
+
+
 let paso = () =>{
-  let x = document.querySelector(".activo");
+  let x = document.querySelectorAll(".activo");
+  x = x[x.length-1];
   x.classList.remove("activo");
-  count++;
+  if (count < 25){
+    count++;
+  } else {
+    count = 0;
+  } ; 
   letr = rosco[count];
   letr.activar();
   letr.mostrarDef();
@@ -466,5 +550,3 @@ let volverJugar = () =>{
   //BORRAR ROSCO
   crearCercles();
 }
-
-
