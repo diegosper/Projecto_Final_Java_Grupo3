@@ -300,18 +300,20 @@ let rellRosco= ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p",
 let rosco = new Array(26);
 let asdf = false;
 
-let llenarRosco = (letra) => {
+let primera = () =>{
+  if(asdf == false){
+    rosco[0].activar();
+    rosco[0].mostrarDef();
+  }
+}
+
+
+let llenarRosco = async (letra) => {
   let urlAPI =`http://localhost:8080/api/getRandomWord?letter=${letra}`;
   fetch(urlAPI)  
   .then(response => response.json())
   .then(data => {
     let x = new LetraR(data.letter, data.word, data.question);
-    if(asdf == false){
-      x.mostrarDef();
-      x.activar()
-      letr = x;
-      asdf = true;
-    }
     switch(letra) {
       case 'a':
         rosco[0] = x;
@@ -392,6 +394,9 @@ let llenarRosco = (letra) => {
         rosco[25]= x;
         break;
     }
+  })
+  .then(data =>{
+    primera();
   })
 }
 rellRosco.forEach(letra => llenarRosco(letra))
