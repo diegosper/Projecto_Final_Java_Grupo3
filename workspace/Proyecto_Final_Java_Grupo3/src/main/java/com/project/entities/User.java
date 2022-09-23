@@ -1,12 +1,11 @@
 package com.project.entities;
 
-import java.sql.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 
@@ -16,9 +15,8 @@ public class User{
 	
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	
 	@Column(name = "user_id") 
-	private Long id;
+	private int id;
 	
 	@Column(name = "username")
 	private String 	username;
@@ -30,13 +28,13 @@ public class User{
 	private String 	email;
 	
 	@Column (name = "birth_date")
-	private Date birth;
+	private String birth;
 	
 	
 	public User() {}
 
-	public User (String username, String password, String email, Date birth) {
-		//this.id = id;
+	public User (int id, String username, String password, String email, String birth) {
+		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.email = email;
@@ -61,18 +59,18 @@ public class User{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	
-	public Date getBirth() {
+	public String getBirth() {
 		return birth;
 	}
 
-	public void setBirth(Date birth) {
+	public void setBirth(String birth) {
 		this.birth = birth;
 	}
 

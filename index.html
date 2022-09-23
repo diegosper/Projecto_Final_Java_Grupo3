@@ -16,9 +16,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Dosis&family=Montserrat:wght@400;600&family=Rampart+One&display=swap"
         rel="stylesheet">
-
-    <script src="formularios.js" defer></script>
-    <script src="crearUsuario.js" defer></script>
 </head>
 
 <body>
@@ -63,22 +60,22 @@
             <h1>Registro</h1>
             <div>
                 <strong><label>Usuario</label><br></strong>
-                <input type="text" id="usuario">
+                <input type="text" id="usuario" name="user">
             </div>
             <br>
             <div>
                 <strong><label>Constraseña</label><br></strong>
-                <input type="password" id="password">
+                <input type="password" id="password" name="password">
             </div>
             <br>
             <div>
                 <strong><label>Correo electrónico</label><br></strong>
-                <input type="email" id="email">
+                <input type="email" id="email" name="email">
             </div>
             <br>
             <div>
                 <strong><label>Fecha de nacimiento</label><br></strong>
-                <input type="date" id="fechaNacimiento">
+                <input type="date" id="fechaNacimiento" name="birthdate">
             </div>
             <br>
             <br>
@@ -102,6 +99,8 @@
             <button onclick="popUpIniciarSesion">Enviar</button>
         </form>
     </div>
+    <script src="formularios.js" defer></script>
+    <script src="crearUsuario.js" defer></script>
 </body>
 
 </html>
