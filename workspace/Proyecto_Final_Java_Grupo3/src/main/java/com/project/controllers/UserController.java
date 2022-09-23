@@ -1,9 +1,9 @@
 package com.project.controllers;
 
-import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.project.entities.User;
 import com.project.entities.Dtos.UserDto;
-import com.project.repository.UserRepository;
 import com.project.services.UserService;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
@@ -40,9 +39,9 @@ public class UserController {
 	}
 	
 	@PostMapping("/userRegistration")
-	public String addUser(@RequestBody String username, String password, String email, Date birth){
+	public String addUser(@Validated @RequestBody User user){
+		System.out.println(user.toString());
 		String mensaje;
-		User user = new User(username, password, email, birth);
 		
 		System.out.println(user.toString());
 		try {

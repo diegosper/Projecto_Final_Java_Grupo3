@@ -13,8 +13,6 @@
 
         href="https://fonts.googleapis.com/css2?family=Dosis&family=Montserrat:wght@400;600&family=Rampart+One&display=swap"
         rel="stylesheet">
-    <script src="formularios.js" defer></script>
-    <script src="crearUsuario.js" defer></script>
 </head>
 
 <body>
@@ -23,62 +21,33 @@
     <button class="boton" onclick="mostrarPopUp('popUp3')">INICIAR SESIÓN</button>
     <button class="boton1">JUGAR COMO INVITADO</button>
     <button class="botton2" onclick="mostrarPopUp('popUp2')">CREAR PERFIL</button>
-<!--
-    <div class="popUp" id="popUp1">
-        <form action="#">
-            <button class="cruz" onclick="cerrar('popUp1')">&#10005</button>
-            <h1>Registro</h1>
-            <div>
-                <strong><label>Usuario</label><br></strong>
-                <input type="text">
-            </div>
-            <br>
-            <div>
-                <strong><label>Constraseña</label><br></strong>
-                <input type="password">
-            </div>
-            <br>
-            <div>
-                <strong><label>Correo electrónico</label><br></strong>
-                <input type="email">
-            </div>
-            <br>
-            <div>
-                <strong><label>Fecha de nacimiento</label><br></strong>
-                <input type="date">
-            </div>
-            <br>
-            <br>
-            <button onclick="popUp1">Enviar</button>
-        </form>
-    </div>
--->
+
     <div class="popUp" id="popUp2">
-        <form action="http://localhost:8080/api/userRegistration" method="POST">
+        <form>
             <button class="cruz" onclick="cerrar('popUp2')">&#10005</button>
             <h1>Registro</h1>
             <div>
                 <strong><label>Usuario</label><br></strong>
-                <input type="text" id="usuario">
+                <input type="text" id="usuario" name="user">
             </div>
             <br>
             <div>
                 <strong><label>Constraseña</label><br></strong>
-                <input type="password" id="password">
+                <input type="password" id="password" name="password">
             </div>
             <br>
             <div>
                 <strong><label>Correo electrónico</label><br></strong>
-                <input type="email" id="email">
+                <input type="email" id="email" name="email">
             </div>
             <br>
             <div>
                 <strong><label>Fecha de nacimiento</label><br></strong>
-                <input type="date" id="fechaNacimiento">
+                <input type="date" id="fechaNacimiento" name="birthdate">
             </div>
             <br>
             <br>
-            <button type="submit" onclick="userRegistration()">Enviar</button>
+            <button type="submit" onsubmit="userAdd()">Enviar</button>
         </form>
     </div>
     <div class="popUp" id="popUp3">
@@ -98,7 +67,8 @@
             <button onclick="popUp3">Enviar</button>
         </form>
     </div>
-
+    <script src="formularios.js" defer></script>
+    <script src="crearUsuario.js" defer></script>
 </body>
 
 </html>
