@@ -1,4 +1,9 @@
-* {
+#icono {
+  width: 69px;
+  margin-bottom: -6px;
+}
+
+*   {
   box-sizing: border-box;
 }
 
@@ -33,7 +38,7 @@
   margin: 100px auto;
 }
 
-.botton2 {
+.botonCrearPerfil {
   font-family: 'Dosis', sans-serif;
   position: absolute;
   top: 30px;
@@ -51,7 +56,7 @@ body {
   background-color: rgb(154, 152, 251);
 }
 
-.boton {
+.botonIniciarSesion {
   font-family: 'Dosis', sans-serif;
   display: block;
   margin: 20px auto;
@@ -65,7 +70,7 @@ button:hover {
   background-color: lightskyblue;
 }
 
-.boton1 {
+.botonJugarComoInvitado {
   font-family: 'Dosis', sans-serif;
   font-size: calc(3vw + 2px);
   display: block;
