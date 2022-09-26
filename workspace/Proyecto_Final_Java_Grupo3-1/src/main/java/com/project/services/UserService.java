@@ -24,4 +24,13 @@ public class UserService {
 		return user.toString();
 	}
 	
+	public String holaMundo() {
+		return "hola mundo";
+	}
+	
+	public void deleteUser(int id) {
+		// TODO Auto-generated method stub
+		userRepository.deleteById((long) id);
+		
+	}
 }

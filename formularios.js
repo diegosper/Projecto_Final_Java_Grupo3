@@ -9,4 +9,18 @@ let cerrar = (popup) => {
   popUpSel.style.transform= "scale(0)";
   popUpSel.style.opacity = "0";
 
+  limpiar()
+
+}
+
+let limpiar = () => {
+  let usuario = document.getElementById("usuario");
+  let password = document.getElementById("password");
+  let email = document.getElementById("email");
+  let birthday = document.getElementById("fechaNacimiento");
+
+  usuario.value = ''
+  password.value = ''
+  email.value = ''
+  birthday.value = ''
 }

@@ -1,44 +1,20 @@
-function userAdd(){
+function userAdd() {
+    let xhr = new XMLHttpRequest();
+    let url = "http://localhost:8080/users/add"
 
-    let user_value = document.getElementById("usuario");
-    let password_value = document.getElementById("password");
-    let email_value = document.getElementById("email");
-    let birth_value = document.getElementById("fechaNacimiento");
-/*
-    res = fetch("http://localhost:8080/users/add",{
-        method:"POST",
-        headers:{
-            Accept:"application/json",
-            "Contect-Type": "application/json",
-        },
-        body:JSON.stringify(
-            {
-                "username": usuario.user_value,
-                "password": password_value,
-                "email": email_value,
-                "birthdate": "fechaNacimiento"
-            }
-        )
-    })
-    console.log(user_value + password_value + email_value);
-    window.close();
-    */
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "http://localhost:8080/users/add", true);
-    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhttp.onreadystatechange = function() {
-       if (this.readyState == 4 && this.status == 200) {
-    
-          // Response
-          var response = this.responseText; 
-    
-       }
-    };
-    var data = {
-        username: user_value ,
-        password: password_value,
-        email: email_value,
-         birtdate: birth_value
-        };
-    xhttp.send(data);
+    let usuario = document.getElementById("usuario");
+    let password = document.getElementById("password");
+    let email = document.getElementById("email");
+    let birthday = document.getElementById("fechaNacimiento");
+
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({
+        "username": usuario.value,
+        "password": password.value,
+        "email": email.value,
+        "birthdate": birthday.value
+    }));
+
+    cerrar('popUpCrearPerfil')
 }
