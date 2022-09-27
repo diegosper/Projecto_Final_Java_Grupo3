@@ -1,14 +1,20 @@
-* {
+#icono {
+  width: 89px;
+  margin-bottom: -6px;
+}
+
+*   {
   box-sizing: border-box;
 }
 
 .popUp {
   background-color: lightsteelblue;
-  width: 50vw;
-  height: 80vh;
+  width: 30vw;
+  height: 40vh;
   position: absolute;
-  top: 17vh;
-  left: 25vw;
+  top: 30vh;
+  left: 35vw;
+  box-shadow: 0 0 15px 10px;
   border-radius: 20px;
   padding: 40px;
   display: flex;
@@ -33,7 +39,7 @@
   margin: 100px auto;
 }
 
-.botton2 {
+.botonCrearPerfil {
   font-family: 'Dosis', sans-serif;
   position: absolute;
   top: 30px;
@@ -51,7 +57,7 @@ body {
   background-color: rgb(154, 152, 251);
 }
 
-.boton {
+.botonIniciarSesion {
   font-family: 'Dosis', sans-serif;
   display: block;
   margin: 20px auto;
@@ -65,7 +71,7 @@ button:hover {
   background-color: lightskyblue;
 }
 
-.boton1 {
+.botonJugarComoInvitado {
   font-family: 'Dosis', sans-serif;
   font-size: calc(3vw + 2px);
   display: block;

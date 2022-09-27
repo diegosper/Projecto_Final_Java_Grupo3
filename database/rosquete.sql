@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS users (
 	username 	VARCHAR (50) UNIQUE NOT NULL,
 	password 	VARCHAR (50) NOT NULL,
 	email 		VARCHAR (255) UNIQUE NOT NULL,
-    birth_date 	DATE
+    birth_date 	VARCHAR(255)
     /*
     created_on 	TIMESTAMP NOT NULL,
 	last_login 	TIMESTAMP NOT NULL
@@ -31,9 +31,9 @@ CREATE TABLE IF NOT EXISTS game (
 
 CREATE TABLE IF NOT EXISTS words (
 	word_id 	INT UNSIGNED PRIMARY KEY,
-	word 		VARCHAR (500),
+	word 		VARCHAR (80),
 	category_id INT UNSIGNED,
-	question 	VARCHAR (80),
+	question 	VARCHAR (500),
 	letter 		VARCHAR (1),
 	
     CONSTRAINT fk_words FOREIGN KEY (category_id) REFERENCES category (category_id)
@@ -46,38 +46,43 @@ INSERT INTO db_rosquete.users VALUES
 ('3','diego','diego1','diego@gmail.com','1994-05-06');
 
 INSERT INTO db_rosquete.category VALUES
-('1','firstCategory'),
-('2','secondCategory');
+('1','conciencia medioambiental'),
+('2','educacion vial'),
+('3','inteligencia emocional'),
+('4','finanzas personales'),
+('5','turismo sostenible'),
+('6','igualdad de genero'),
+('7','etica ciudadana'),
+('8','salud y bienestar');
 
 INSERT INTO db_rosquete.words VALUES
-('1', 'palabra1', '2', 'esta es la palabra Nº1', 'a'),
-('2', 'palabra2', '2', 'esta es la palabra Nº2', 'b'),
-('3', 'palabra3', '1', 'esta es la palabra Nº3', 'c'),
-('4', 'palabra4', '1', 'esta es la palabra Nº4', 'd');
-/*
-('5', 'palabra5', '1', 'esta es la palabra Nº5', 'e');
-('6', 'palabra6', '1', 'esta es la palabra Nº6', 'f');
-('7', 'palabra7', '1', 'esta es la palabra Nº7', 'g');
-('8', 'palabra8', '1', 'esta es la palabra Nº8', 'h');
-('9', 'palabra9', '1', 'esta es la palabra Nº9', 'i');
-('10', 'palabra10', '1', 'esta es la palabra Nº10', 'j');
-('11', 'palabra11', '1', 'esta es la palabra Nº11', 'k');
-('12', 'palabra12', '1', 'esta es la palabra Nº12', 'l');
-('13', 'palabra13', '1', 'esta es la palabra Nº13', 'm');
-('14', 'palabra14', '1', 'esta es la palabra Nº14', 'n');
-('15', 'palabra15', '1', 'esta es la palabra Nº15', 'o');
-('16', 'palabra16', '1', 'esta es la palabra Nº16', 'p');
-('17', 'palabra17', '1', 'esta es la palabra Nº17', 'q');
-('18', 'palabra18', '1', 'esta es la palabra Nº18', 'r');
-('19', 'palabra19', '1', 'esta es la palabra Nº19', 's');
-('20', 'palabra20', '1', 'esta es la palabra Nº20', 't');
-('21', 'palabra21', '1', 'esta es la palabra Nº21', 'u');
-('22', 'palabra22', '1', 'esta es la palabra Nº22', 'v');
-('23', 'palabra23', '1', 'esta es la palabra Nº23', 'w');
-('24', 'palabra24', '1', 'esta es la palabra Nº24', 'x');
-('25', 'palabra25', '1', 'esta es la palabra Nº25', 'y');
-('26', 'palabra26', '1', 'esta es la palabra Nº26', 'z');
-*/
+('1','amigdala','8','considerada el centro del control emocional del cerebro','a'),
+('2','beca','4','ayuda economica fruto del esfuerzo estudiantil','b'),
+('3','coaching','3','entrenamiento que ayuda a una persona en la exploración y descubrimiento de nuevas creencias para optimizar su vida','c'),
+('4','patriarcado','6','forma tradicional de organización social que suele ser la base de la desigualdad de género','d'),
+('5','emocion','3','reacciones psicofisiológicas que representan modos de adaptación del individuo cuando percibe un objeto, persona, lugar, suceso o recuerdo importante','e'),
+('6','clorofluorocarbonos','8','Gases sintéticos que destruyen la capa de ozono de la estratosfera, incrementando por tanto la exposición de la tierra a los dañinos rayos ultravioletas.','f'),
+('7','gastos','4','dinero que gastas en necesidades diarias','g'),
+('8','hipocampo','8','donde se produce el aprendizaje emocional y se almacenan los recuerdos emocionales, da respuesta emocional a las sensaciones','h'),
+('9','inversion','4','Invertir es, de manera resumida, el proceso de comprar activos que aumentan de valor con el tiempo y proporcionan rendimientos en forma de pagos de ingresos o ganancias de capital.','i'),
+('10','hola','2','nadaqueverJ','j'),
+('11','buenas','4','nadaqueverK','k'),
+('12','licencia','2','Para poder circular libremente con vehículos a motor y ciclomotores debes disponer previamente de la autorización pertinente, certificando así tener los requisitos de capacidad, conocimiento y habilidad necesarios para conducir dicho vehículo.','l'),
+('13','empoderamiento','6','transformación de las relaciones de poder, que permite a aquellas/os que les son negados, ampliar sus aspiraciones, fortalecer su voz y ejercer su capacidad de decidir','m'),
+('14','nomina','4','documento que detalla tus periodos de liquidación, percepciones, deducciones, bases de cotización.','n'),
+('15','oratoria','3','como hablar en publico y expresar sus ideas','o'),
+('16','paro','4','subvencion que te da el Estado cuando te quedas desempleado','p'),
+('17','quinoa','8','super alimento que se conoce y se clasifica como un grano integral','q'),
+('18','reciclar','1','votar la basura en el lugar correcto','r'),
+('19','señales','2','carteles que se tienen que ver en las carreteras','s'),
+('20','plastico','1','Impactan en el medioambiente desde su fabricación hasta su manipulación como desechos.','t'),
+('21','polucion','1','Se compone de muchos tipos de gases, gotitas y partículas que reducen la calidad el aire','u'),
+('22','biodiversidad','1','diversidad de seres vivos sobre la Tierra como las plantas, animales, microorganismos o también la variedad de ecosistemas.','v'),
+('23','tardes','6','nadaqueverW','w'),
+('24','atodos','7','nadaqueverX','x'),
+('25','solamente','8','nadaqueverY','y'),
+('26','awiiiiiitah','5','nadaqueverZ','z');
+
 
 SELECT * FROM users;
 SELECT * FROM words;

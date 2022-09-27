@@ -1,17 +1,20 @@
-function userRegistration(){
-    // let urlAPI = "http://localhost:8080/api/userRegistration";
+function userAdd() {
+    let xhr = new XMLHttpRequest();
+    let url = "http://localhost:8080/users/add"
 
-    
-    let user_value = document.getElementById("usuario");
-    let password_value = document.getElementById("password");
-    let email_value = document.getElementById("email");
-    let birth_value = document.getElementById("fechaNacimiento");
-    
-    let urlAPI = `http://localhost:8080/api/userRegistration?email=${email_value}&password=${password_value}&username=${user_value}&birth=${birth_value}`;
-    
-    fetch(urlAPI, method="POST")
-    .then(response => response.json())
-    .then((data) => console.log(date));   
+    let usuario = document.getElementById("usuario");
+    let password = document.getElementById("password");
+    let email = document.getElementById("email");
+    let birthday = document.getElementById("fechaNacimiento");
 
-    window.close();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({
+        "username": usuario.value,
+        "password": password.value,
+        "email": email.value,
+        "birthdate": birthday.value
+    }));
+
+    cerrar('popUpCrearPerfil')
 }

@@ -9,24 +9,28 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.sgstatic.com" crossorigin>
+    <link rel="shortcut icon" href="./icono/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./icono/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="96x96" href="./icono/favicon-96x96.png">
+    <meta name="theme-color" content="#ffffff">
     <link
-
         href="https://fonts.googleapis.com/css2?family=Dosis&family=Montserrat:wght@400;600&family=Rampart+One&display=swap"
         rel="stylesheet">
-    <script src="formularios.js" defer></script>
-    <script src="crearUsuario.js" defer></script>
+
+        <script src="formularios.js" defer></script>
+        <script src="crearUsuario.js" defer></script>
 </head>
 
 <body>
-    <h1 class="nombre">EL ROSQUETE</h1>
-    <h2 class="lema">Lo que no te enseñan en la Escuela</h2>
-    <button class="boton" onclick="mostrarPopUp('popUp3')">INICIAR SESIÓN</button>
-    <button class="boton1">JUGAR COMO INVITADO</button>
-    <button class="botton2" onclick="mostrarPopUp('popUp2')">CREAR PERFIL</button>
-<!--
-    <div class="popUp" id="popUp1">
+    <h1 class="nombre">EL R<span><img id="icono" src="./icono/favicon-96x96.png"></span>SQUETE</h1>
+    <h2 class="lema">Lo que NO te enseñan en la Escuela</h2>
+    <button class="botonIniciarSesion" onclick="mostrarPopUp('popUpIniciarSesion')">INICIAR SESIÓN</button>
+    <button class="botonJugarComoInvitado" onclick="mostrarPopUp('popUpJugarComoInvitado')">JUGAR COMO INVITADO</button>
+    <button class="botonCrearPerfil" onclick="mostrarPopUp('popUpCrearPerfil')">CREAR PERFIL</button>
+
+    <!--<div class="popUp" id="popUpJugarComoInvitado">
         <form action="#">
-            <button class="cruz" onclick="cerrar('popUp1')">&#10005</button>
+            <button class="cruz" onclick="cerrar('popUpJugarComoInvitado')">&#10005</button>
             <h1>Registro</h1>
             <div>
                 <strong><label>Usuario</label><br></strong>
@@ -49,41 +53,39 @@
             </div>
             <br>
             <br>
-            <button onclick="popUp1">Enviar</button>
+            <button onclick="popUpJugarComoInvitado">Enviar</button>
         </form>
+    </div>-->
+
+    <div class="popUp" id="popUpCrearPerfil">
+        <button class="cruz" onclick="cerrar('popUpCrearPerfil')">&#10005</button>
+        <h1>Registro</h1>
+        <div>
+            <strong><label>Usuario</label><br></strong>
+            <input type="text" id="usuario" name="user">
+        </div>
+        <br>
+        <div>
+            <strong><label>Constraseña</label><br></strong>
+            <input type="password" id="password" name="password">
+        </div>
+        <br>
+        <div>
+            <strong><label>Correo electrónico</label><br></strong>
+            <input type="email" id="email" name="email">
+        </div>
+        <br>
+        <div>
+            <strong><label>Fecha de nacimiento</label><br></strong>
+            <input type="date" id="fechaNacimiento" name="birthdate">
+        </div>
+        <br>
+        <br>
+        <button onclick="userAdd()">Enviar</button>
     </div>
--->
-    <div class="popUp" id="popUp2">
-        <form action="http://localhost:8080/api/userRegistration" method="POST">
-            <button class="cruz" onclick="cerrar('popUp2')">&#10005</button>
-            <h1>Registro</h1>
-            <div>
-                <strong><label>Usuario</label><br></strong>
-                <input type="text" id="usuario">
-            </div>
-            <br>
-            <div>
-                <strong><label>Constraseña</label><br></strong>
-                <input type="password" id="password">
-            </div>
-            <br>
-            <div>
-                <strong><label>Correo electrónico</label><br></strong>
-                <input type="email" id="email">
-            </div>
-            <br>
-            <div>
-                <strong><label>Fecha de nacimiento</label><br></strong>
-                <input type="date" id="fechaNacimiento">
-            </div>
-            <br>
-            <br>
-            <button type="submit" onclick="userRegistration()">Enviar</button>
-        </form>
-    </div>
-    <div class="popUp" id="popUp3">
+    <div class="popUp" id="popUpIniciarSesion">
         <form action="#">
-            <button class="cruz" onclick="cerrar('popUp3')">&#10005</button>
+            <button class="cruz" onclick="cerrar('popUpIniciarSesion')">&#10005</button>
             <h1>Iniciar sesión</h1>
             <div>
                 <strong><label>Usuario</label><br></strong>
@@ -95,7 +97,7 @@
                 <input type="password">
             </div>
             <br>
-            <button onclick="popUp3">Enviar</button>
+            <button onclick="popUpIniciarSesion">Enviar</button>
         </form>
     </div>
 

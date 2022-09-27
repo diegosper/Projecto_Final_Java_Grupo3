@@ -34,11 +34,12 @@ public class UserService {
 	}
 	
 	public void addUser(User user) {
-		userRepository.save(user);
-		
+		if (user != null) {
+			userRepository.save(user);
+		}
 	}
 
-	public void deleteUser(Long id) {
+	public void deleteUser(long id) {
 		// TODO Auto-generated method stub
 		userRepository.deleteById(id);
 		
