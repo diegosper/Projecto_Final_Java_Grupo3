@@ -1,5 +1,5 @@
 #icono {
-  width: 69px;
+  width: 89px;
   margin-bottom: -6px;
 }
 
@@ -9,11 +9,12 @@
 
 .popUp {
   background-color: lightsteelblue;
-  width: 50vw;
-  height: 80vh;
+  width: 30vw;
+  height: 40vh;
   position: absolute;
-  top: 17vh;
-  left: 25vw;
+  top: 30vh;
+  left: 35vw;
+  box-shadow: 0 0 15px 10px;
   border-radius: 20px;
   padding: 40px;
   display: flex;
