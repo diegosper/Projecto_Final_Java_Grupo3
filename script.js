@@ -304,6 +304,8 @@ let primera = () =>{
   if(asdf == false){
     rosco[0].activar();
     rosco[0].mostrarDef();
+    asdf=true;
+    letr = rosco[0];
   }
 }
 
@@ -431,7 +433,6 @@ let ok = () => {
   let palabra = letr.palabra;
   palabra.toLowerCase();
   iguals = true;
-
 if(input.length == palabra.length){
   for (let i=0; i<input.length && iguals == true; i++){
     console.log(palabra[i]+", "+input[i])
