@@ -9,15 +9,15 @@ let cerrar = (popup) => {
   popUpSel.style.transform= "scale(0)";
   popUpSel.style.opacity = "0";
 
-  limpiar()
+  limpiarRegistrar()
 
 }
 
-let limpiar = () => {
-  let usuario = document.getElementById("usuario");
-  let password = document.getElementById("password");
-  let email = document.getElementById("email");
-  let birthday = document.getElementById("fechaNacimiento");
+let limpiarRegistrar = () => {
+  let usuario = document.getElementById("registrar_usuario");
+  let password = document.getElementById("registrar_password");
+  let email = document.getElementById("registrar_email");
+  let birthday = document.getElementById("registrar_fecha_nacimiento");
 
   usuario.value = ''
   password.value = ''

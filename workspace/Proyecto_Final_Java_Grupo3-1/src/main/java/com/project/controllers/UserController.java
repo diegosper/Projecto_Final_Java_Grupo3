@@ -18,9 +18,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.project.entities.User;
 import com.project.services.UserService;
 
+@CrossOrigin
 @RestController
 public class UserController {
-	@Autowired
+	@Autowired(required = false)
 	UserService userService;
 	
 	@GetMapping("/users")
