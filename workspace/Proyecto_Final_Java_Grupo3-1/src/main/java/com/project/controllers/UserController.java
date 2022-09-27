@@ -34,8 +34,6 @@ public class UserController {
 		return userService.getUsers();
 	}
 	
-	
-	
 	@CrossOrigin(origins = "*", maxAge = 3600)
 	@PostMapping("/users/add")
 	public String addUser(@RequestBody User user) {
@@ -44,10 +42,14 @@ public class UserController {
 		return userService.addUser(user);
 	}
 	
-	
+	@GetMapping ("/users/get")
+	public User getUser(@RequestParam String username, String password) {
+		
+		return userService.getUserByUsername(username, password);
+	}
 	
 	@DeleteMapping("/users/delete")
-	public String deleteUser(@RequestParam int id){
+	public String deleteUser(@RequestParam Long id){
 		userService.deleteUser(id);
 
 		return ""+id+"";
