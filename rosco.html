@@ -13,13 +13,14 @@
       href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;600;700&family=Orbitron:wght@500&family=Rampart+One&display=swap"
       rel="stylesheet"
     />
-    <script src="script.js" defer></script>
+    <!-- script -->
+    <script src="classes.js"></script>
+    <script src="crearRosco.js" defer></script>
+    <script src="main.js" defer></script>
   </head>
 
   <body onresize="moverCirculos()">
-
     <div class="cont_p_rosco">
-     
       <header id="headerRosco" style="background-color: rgb(254, 138, 138)">
         <h1><a href="index.html">El Rosquete</a></h1>
         <div id="ic_jugador">
@@ -27,46 +28,16 @@
           <img src="./img/profile-user.png" alt="" class="icoJugador" />
         </div>
       </header>
-    
+
       <div id="roscoCentrar">
         <section id="cont_rosco">
           <div id="contenedorDef">
-            <p id="definicion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias soluta eius est impedit distinctio tenetur inventore assumenda omnis expedita numquam.
-            </p>
+            <p id="definicion"></p>
           </div>
-          
         </section>
       </div>
       <div class="circuloFake circle"></div>
-        
 
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
       <section id="definiciones">
         <div class="disFlex">
           <img src="img\hourglass.png" alt="" class="icoJugador" />
@@ -74,17 +45,21 @@
         </div>
 
         <div>
-          <div class="centerMobile">        
+          <div class="centerMobile">
             <label for="respuesta" id="labelRespuesta">Respuesta: </label>
-            <input id="respuesta" name="respuesta" type="text" placeholder="Tu respuesta"/>
+            <input
+              id="respuesta"
+              name="respuesta"
+              type="text"
+              placeholder="Tu respuesta"
+            />
           </div>
-          
+
           <div class="br"></div>
           <div class="centerMobile">
             <button type="submit" id="bResponder" onclick="ok()">OK</button>
             <button id="bResponder" onclick="paso()">Paso!</button>
           </div>
-            
         </div>
       </section>
 
@@ -128,19 +103,21 @@
       <button id="quienes">¿Quienes somos?</button>
     </footer>
 
-
-  <!-- Pantalla que aparece cuando acaba el juego -->
+    <!-- Pantalla que aparece cuando acaba el juego -->
     <div id="pantallaResultado" class="pantalla">
       <h2 class="text_center">Fin del juego</h2>
       <h3 class="text_center">Puntuacion</h3>
       <p class="text_center">Jugador: Invitado</p>
       <ul class="text_center">
-        <li>Aciertos: <span id="r_aciertos">0</span> </li>
+        <li>Aciertos: <span id="r_aciertos">0</span></li>
         <li>Errores: <span id="r_errores">0</span></li>
-        <li>Tiempo:  <span id="r_tiempo">0</span></li>
+        <li>Tiempo: <span id="r_tiempo">0</span></li>
       </ul>
-      <p class="text_center"><strong>Puntuacion total:</strong>  <span id="r_puntuacion">1.00000</span></p>
+      <p class="text_center">
+        <strong>Puntuacion total:</strong>
+        <span id="r_puntuacion">1.00000</span>
+      </p>
       <button onclick="volverJugar()">Volver a jugar</button>
-    </div>  
-</body>
+    </div>
+  </body>
 </html>
