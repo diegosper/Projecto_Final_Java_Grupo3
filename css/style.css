@@ -7,8 +7,21 @@
   box-sizing: border-box;
 }
 
+h1,h2,h3,h4,h5{
+  font-family: 'Rampart One', cursive;
+}
+p,label,button{
+  font-family: 'Dosis', sans-serif;
+}
+input{
+  border: 1px solid grey;
+  border-radius: 7px;
+  margin-top: 4px;
+  height: 22px;
+}
+
 .popUp {
-  background-color: lightsteelblue;
+  background-color: aquamarine;
   width: 50vw;
   height: 60vh;
   position: absolute;
@@ -30,8 +43,15 @@
 .cruz{
   position: absolute;
   top: 20px;
-  right: 20px;
-
+  right: 25px;
+  background-color: unset;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.cruz:hover{
+  background-color:unset;
 }
 
 .formu {
@@ -55,7 +75,8 @@
 }
 
 body {
-  background-color: rgb(154, 152, 251);
+  background-color: rgba(154, 152, 251, 0.383);
+  /* background-color: rgba(127, 255, 212, 0.483); */
 }
 
 .botonIniciarSesion {
@@ -63,8 +84,8 @@ body {
   display: block;
   margin: 20px auto;
   border-radius: 7px;
-  padding: 7px;
-  background-color: lightgoldenrodyellow;
+  padding: 7px 30px;
+  background-color: antiquewhite;
   font-size: calc(3vw + 2px);
 }
 
@@ -79,7 +100,7 @@ button:hover {
   margin: 0px auto;
   border-radius: 7px;
   background-color: lightgoldenrodyellow;
-  padding: 7px;
+  padding: 7px 35px;
 }
 
 
