@@ -1,3 +1,22 @@
+let comprovarRespuesto = () =>{
+  let i = 0;
+  while(letr.respuesto == "true" && i<25 ){
+    if (count < 25){
+      count++;
+      i++;
+    } else {
+      count = 0;
+      count++;
+    };
+    letr = rosco[count];
+  }
+  if (i==25){
+    clearInterval(interval);
+    partidas.puntuacion();
+    mostrarResultado();
+  }
+}
+
 //VARIABLES NECESARIAS PARA CREAR EL ROSCO
 let circleArray = [];
 let mainHeight;
@@ -274,12 +293,14 @@ let crearCercles = () => {
         document.querySelector(`.${letra}`).classList.add('acierto');
         this.respuesto = true;
         palabras_lateral[count].innerHTML = this.palabra;
+        partidas.aciertos++;
         aciertos++;
       }
       error(){
         let letra = this.letra.toUpperCase();
         document.querySelector(`.${letra}`).classList.add('fallo');
         this.respuesto = false;
+        partidas.errores++;
         errores++;
       }
       mostrarDef(){
@@ -440,20 +461,28 @@ if(input.length == palabra.length){
   }
   if(iguals == false){
     letr.error()
+    letr.respuesto = "true";
     aumentarCount();
     iguals = true;
     letr = rosco[count];
+    comprovarRespuesto();
     letr.activar();
+    letr.mostrarDef();
   } else{
     letr.acierto();
+    letr.respuesto = "true";
     aumentarCount();
     letr = rosco[count];
+    comprovarRespuesto();
     letr.activar();
+    letr.mostrarDef();
   }
 } else{  
   letr.error();
+  letr.respuesto = "true";
   aumentarCount();
   letr = rosco[count];
+  comprovarRespuesto();
   let respondida = true;
   for(let i=0; i<rosco.length && respondida == true ; i++){
     if(letr.respuesto == false){
@@ -463,15 +492,16 @@ if(input.length == palabra.length){
     } else{
       aumentarCount();
       letr = rosco[count];
+      comprovarRespuesto();
     }
   }
-  if(respondida == true){
-    //FIN PARTIDA
-    clearInterval(interval);
-    partidas.puntuacion();
-    mostrarResultado();
-    // !!! (pendiente) SUBIR PUNTUACION A LA BASE DE DATOS
-  }
+  // if(respondida == true){
+  //   //FIN PARTIDA
+  //   clearInterval(interval);
+  //   partidas.puntuacion();
+  //   mostrarResultado();
+  //   // !!! (pendiente) SUBIR PUNTUACION A LA BASE DE DATOS
+  // }
 }
 }
 
@@ -487,7 +517,9 @@ let paso = () =>{
     count++;
   } else {
     count = 0;
-  } ; 
+  };
+  letr = rosco[count];
+  comprovarRespuesto();
   letr = rosco[count];
   letr.activar();
   letr.mostrarDef();
@@ -497,7 +529,7 @@ let paso = () =>{
 
 
 
-
+ 
 
 
 // CLASE PARTIDA: clase para guardar la puntuacion --> CREAR AUTOMATICAMENTE CUANDO LE DAS A JUGAR!!!!!!
@@ -508,6 +540,7 @@ class Partida {
     this.aciertos = 0;
     this.errores = 0;
     this.tiempo = 0;
+    this.puntuacionFinal = 0;
   }
   puntuacion (){
     //aciertos - errores
@@ -515,14 +548,17 @@ class Partida {
       let tpo = document.querySelector("#crono").innerHTML;
       let minutos = parseInt(tpo.slice(0,2));
       let segundos = parseInt(tpo.slice(3,5));
-      tpo = minutos*60+segundos;
+      tpo = parseInt(minutos)*60+parseInt(segundos);
     //penalización por tiempo
     puntuacion = puntuacion - tpo;
     score = puntuacion;
+    this.puntuacionFinal = puntuacion;
+    this.tiempo = tpo;
+    
   }
 } 
 let partidas;
-partida = new Partida (player);
+partidas = new Partida (player);
 let score;
 
 
@@ -537,10 +573,12 @@ let mostrarResultado = () =>{
   let ac = document.querySelector("#r_aciertos");
   let err = document.querySelector("#r_errores");
   let  tiem = document.querySelector("#r_tiempo");
+  let punt = document.querySelector("#r_puntuacion");
 
   ac.innerHTML = partidas.aciertos;
   err.innerHTML = partidas.errores;
-  tiem = partidas.tiempo;
+  punt.innerHTML = partidas.puntuacionFinal;
+  tiem.innerHTML = document.querySelector("#crono").innerHTML;
 }
 let volverJugar = () =>{
   let pantallaFinal = document.querySelector("#pantallaResultado");
@@ -551,8 +589,11 @@ let volverJugar = () =>{
   errores = 0;
   i = 0;
   document.querySelector("#crono").innerHTML= "00:00";
-  partidas= new Partida(player);
+  partidas = new Partida(player);
+
+  rosco.forEach(elem => elem.respuesto = false)  
 
   //BORRAR ROSCO
   crearCercles();
+  interval = setInterval(cronometro,1000);
 }
