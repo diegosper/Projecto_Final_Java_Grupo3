@@ -442,3 +442,43 @@ label{
 footer{
     margin: auto 0px auto;
 }
+
+#sobreN{
+    background-color: $azul;
+    width: 80vw;
+    height: 80vh;
+    margin: 10vh 10vw;
+    position:absolute;
+    top: 0;
+    left: 0;
+    border-radius:20px ;
+    padding: 30px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 1s;
+    transition: transform 0.3s;
+}
+
+#quienesS{
+    background-color: $azul;
+    width: 80vw;
+    height: 80vh;
+    margin: 10vh 10vw;
+    position:absolute;
+    top: 0;
+    left: 0;
+    border-radius:20px ;
+    padding: 30px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 1s;
+    transition: transform 0.3s;
+}

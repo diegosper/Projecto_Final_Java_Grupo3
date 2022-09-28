@@ -17,6 +17,7 @@
     <script src="classes.js"></script>
     <script src="crearRosco.js" defer></script>
     <script src="main.js" defer></script>
+    <script src="otros.js" defer></script>
   </head>
 
   <body onresize="moverCirculos()">
@@ -99,8 +100,8 @@
     </div>
 
     <footer id="footerRosco" style="background-color: rgb(254, 254, 110)">
-      <button id="sobre">Sobre el proyecto</button>
-      <button id="quienes">¿Quienes somos?</button>
+      <button id="sobre" onclick="abrirSobre()">Sobre el proyecto</button>
+      <button id="quienes" onclick="abrirQuienes()">¿Quienes somos?</button>
     </footer>
 
     <!-- Pantalla que aparece cuando acaba el juego -->
@@ -119,5 +120,25 @@
       </p>
       <button onclick="volverJugar()">Volver a jugar</button>
     </div>
+
+
+
+    <!-- Pantalla sobre el proyecto -->
+    <div id="sobreN">
+      <button style="position:absolute; top:30px; right:30px; font-size:28px" onclick="cerrarSobre()">&#10006;</button>
+      <h2>Sobre el proyecto:</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam doloremque voluptatum quas architecto iste tempore harum rem sequi, impedit molestiae natus accusantium asperiores totam quia perferendis voluptates atque a quibusdam.</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus aut earum placeat, quibusdam dolore non. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, tenetur?</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad magni, sint aspernatur nulla explicabo aperiam vero tempora similique fugiat quisquam. Voluptatum officia impedit inventore aliquid consectetur optio nam quidem, nesciunt doloremque dolores animi amet maxime, hic magnam unde veritatis voluptatibus magni iusto! Earum, totam dicta explicabo accusamus autem deleniti officia fuga.</p>
+    </div>
+    <!-- Pantalla quienes somos -->
+    <div id="quienesS">
+      <button style="position:absolute; top:30px; right:30px; font-size:28px" onclick="cerrarQuienes()">&#10006;</button>
+      <h2>Quienes Somos?</h2>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam doloremque voluptatum quas architecto iste tempore harum rem sequi, impedit molestiae natus accusantium asperiores totam quia perferendis voluptates atque a quibusdam.</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus aut earum placeat, quibusdam dolore non. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, tenetur?</p>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad magni, sint aspernatur nulla explicabo aperiam vero tempora similique fugiat quisquam. Voluptatum officia impedit inventore aliquid consectetur optio nam quidem, nesciunt doloremque dolores animi amet maxime, hic magnam unde veritatis voluptatibus magni iusto! Earum, totam dicta explicabo accusamus autem deleniti officia fuga.</p>
+    </div>
+
   </body>
 </html>
