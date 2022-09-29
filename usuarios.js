@@ -41,23 +41,29 @@ let user;
 
 async function userLogin() {
 
-    
+
     let userIntro = document.querySelector("#ingresar_usuario").value;
     let passwordItntro = document.querySelector('#ingresar_password').value;
 
     let urlAPI = `http://localhost:8080/users/get?username=${userIntro}&password=${passwordItntro}`;
 
-    res = await fetch(urlAPI).then(
-        (response) => response.json()
-    )
-    
+    try {
+
+        res = await fetch(urlAPI).then(
+            (response) => response.json()
+        )
+    } catch (error) {
+        res ="";
+    }
+
     if (res != "") {
-        
-        
+
+
         alert(`Bienvenido ${userIntro}!!`);
         window.location.assign("http://localhost:5500/rosco.html");
-    } else{
-        alert("Usuario y/o contraseña incorrectas");
+    } else {
+        document.getElementById("resultadoLogin").style.visibility="visible";
+
     }
 
     /*
