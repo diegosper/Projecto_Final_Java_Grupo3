@@ -57,12 +57,8 @@ async function userLogin() {
     }
 
     if (res != "") {
-<<<<<<< HEAD
-        
-=======
 
 
->>>>>>> diego
         alert(`Bienvenido ${userIntro}!!`);
         console.log(res);
         sessionStorage.setItem('user', `${userIntro}`)
