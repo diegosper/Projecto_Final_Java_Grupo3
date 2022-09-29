@@ -1,4 +1,4 @@
-class User{
+class User {
     /*
     constructor(id, username, password, email, birthdate){
         this.user_id = id; 
@@ -9,7 +9,7 @@ class User{
     }
     */
 
-    constructor(username, password){
+    constructor(username, password) {
         this.username = username;
         this.password = password;
     }
@@ -37,35 +37,35 @@ function userAdd() {
     cerrar('popUpCrearPerfil')
 }
 
-let user; 
+let user;
 
-function userLogin(){
-    alert("Submit button clicked!");
+async function userLogin() {
+
+    
     let userIntro = document.querySelector("#ingresar_usuario").value;
     let passwordItntro = document.querySelector('#ingresar_password').value;
 
-    let urlAPI =`http://localhost:8080/users/get?username=${userIntro}&password=${passwordItntro}`; 
+    let urlAPI = `http://localhost:8080/users/get?username=${userIntro}&password=${passwordItntro}`;
 
-    fetch(urlAPI)
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);    
-        
-        
-        // user = new User (data.username, data.password);
-        // console.log(user);
-        
+    res = await fetch(urlAPI).then(
+        (response) => response.json()
+    )
     
-       /* if (data){
-            user = new User (data.username, data.password)
-            console.log(user);
-        } else{
-            alert("Usuario incorrecto")
-        }
-        */
+    if (res != "") {
+        
+        
+        alert(`Bienvenido ${userIntro}!!`);
+        window.location.assign("http://localhost:5500/rosco.html");
+    } else{
+        alert("Usuario y/o contraseña incorrectas");
+    }
 
-    }) 
+    /*
+        fetch(urlAPI)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+    */
+
 }
-    
 
-    //window.location.assign("http://localhost:5500/rosco.html");

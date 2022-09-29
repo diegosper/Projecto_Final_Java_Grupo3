@@ -129,7 +129,7 @@ let crearCercles = () => {
     }
     
     let llenarRosco = async (letra) => {
-      let urlAPI =`http://localhost:8080/api/getRandomWord?letter=${letra}`;
+      let urlAPI =`http://localhost:8080/words/random?letter=${letra}`;
       fetch(urlAPI)  
       .then(response => response.json())
       .then(data => {
