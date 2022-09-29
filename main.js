@@ -1,20 +1,18 @@
-  //DEFINIR JUGADOR
-  let player = "Invitado"; //falta la funcionalidad jugar como registrado;
+//DEFINIR JUGADOR
+let player = "Invitado"; //falta la funcionalidad jugar como registrado;
 
-  
 //CREAR PARTIDA
 let partidas;
 partidas = new Partida (player);
 let score;
 
-  
-  //CRONOMETRO
-    let minutos = "00";
-    let segundos = "00";
-    let crono = document.querySelector("#crono");
-    let i = 0;
+//CRONOMETRO
+let minutos = "00";
+let segundos = "00";
+let crono = document.querySelector("#crono");
+let i = 0;
 
-    let cronometro = () => {
+let cronometro = () => {
       i++;
       if(i<10){
         segundos = `0${i}`;
@@ -36,9 +34,8 @@ let score;
         }
       }
       crono.innerHTML = `${minutos}:${segundos}`    
-    }
-
-    let interval = setInterval(cronometro,1000); //esto hace que cada 1000 ms (= 1 segundo) se ejecute la función cronometro.
+}
+let interval = setInterval(cronometro,1000); //esto hace que cada 1000 ms (= 1 segundo) se ejecute la función cronometro.
 
 
       //ACTIVAR LETRA 'A' AL INICIO DEL JUEGO
@@ -112,6 +109,15 @@ if(input.length == palabra.length){
   }
 }
 }
+    //tecla intro --> ok()
+let input = document.querySelector("#respuesta");
+input.addEventListener("keypress", function(event){
+  if(event.key=="Enter"){
+    ok();
+    event.preventDefault();
+  }
+})
+
 
 //BOTON PASO
 let paso = () =>{
@@ -189,11 +195,3 @@ let volverJugar = () =>{
   interval = setInterval(cronometro,1000);
 }
 
-//TECLA INTRO --> OK
-let input = document.querySelector("#respuesta");
-input.addEventListener("keypress", function(event){
-  if(event.key=="Enter"){
-    ok();
-    event.preventDefault();
-  }
-})
