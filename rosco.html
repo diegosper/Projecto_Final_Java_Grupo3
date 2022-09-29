@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rosco</title>
+    <title>El rosco de la vida</title>
     <link rel="stylesheet" href="css\rosco.css" />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,14 +18,15 @@
     <script src="crearRosco.js" defer></script>
     <script src="main.js" defer></script>
     <script src="otros.js" defer></script>
+    <script src="usuarios.js" defer></script>
   </head>
 
   <body onresize="moverCirculos()">
     <div class="cont_p_rosco">
       <header id="headerRosco" style="background-color: rgb(254, 138, 138)">
-        <h1><a href="index.html">El Rosquete</a></h1>
+        <h1>El Rosco de la vida</h1>
         <div id="ic_jugador">
-          <p>Invitado</p>
+          <p class="ponerNombre" id="abrirPlayer" onclick="desplegarJugador()">Invitado</p>
           <img src="./img/profile-user.png" alt="" class="icoJugador" />
         </div>
       </header>
@@ -101,14 +102,14 @@
 
     <footer id="footerRosco" style="background-color: rgb(254, 254, 110)">
       <button id="sobre" onclick="abrirSobre()">Sobre el proyecto</button>
-      <button id="quienes" onclick="abrirQuienes">¿Quienes somos?</button>
+      <button id="quienes" onclick="abrirQuienes()">¿Quienes somos?</button>
     </footer>
 
     <!-- Pantalla que aparece cuando acaba el juego -->
     <div id="pantallaResultado" class="pantalla">
       <h2 class="text_center">Fin del juego</h2>
       <h3 class="text_center">Puntuacion</h3>
-      <p class="text_center">Jugador: Invitado</p>
+      <p class="text_center ponerNombre">Jugador: Invitado</p>
       <ul class="text_center">
         <li>Aciertos: <span id="r_aciertos">0</span></li>
         <li>Errores: <span id="r_errores">0</span></li>
@@ -140,5 +141,11 @@
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad magni, sint aspernatur nulla explicabo aperiam vero tempora similique fugiat quisquam. Voluptatum officia impedit inventore aliquid consectetur optio nam quidem, nesciunt doloremque dolores animi amet maxime, hic magnam unde veritatis voluptatibus magni iusto! Earum, totam dicta explicabo accusamus autem deleniti officia fuga.</p>
     </div>
 
+
+    <div id="modalJugador">
+        <button style="position:absolute; top:30px; right:30px; font-size:28px; background-color: unset; border: none;" onclick="cerrarJug()">&#10006;</button>
+        <h2 class="ponerNombre">Invitado</h2>
+        <button id="cerrarSesion" onclick="cerrarSesion()">Cerrar session</button>
+    </div>
   </body>
 </html>

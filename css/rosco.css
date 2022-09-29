@@ -391,6 +391,47 @@ footer {
   margin: auto 0px auto;
 }
 
+#abrirPlayer {
+  cursor: pointer;
+}
+
+#abrirPlayer:hover {
+  text-decoration: underline;
+}
+
+#modalJugador {
+  background-color: aquamarine;
+  border: solid 1px rgb(14, 81, 59);
+  width: 40vw;
+  min-width: 280px;
+  height: 40vh;
+  margin: 20vh 20vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 1s;
+  transition: transform 0.3s;
+}
+#modalJugador h2 {
+  margin: 0px;
+  margin-bottom: 25px;
+}
+#modalJugador button {
+  background-color: white;
+  border: 1px solid rgb(14, 81, 59);
+}
+#modalJugador button:hover {
+  background-color: rgb(14, 81, 59);
+  color: white;
+}
+
 #sobreN {
   background-color: aquamarine;
   width: 80vw;
@@ -429,4 +470,13 @@ footer {
   transform: scale(0);
   transition: opacity 1s;
   transition: transform 0.3s;
+}
+
+@media all and (max-width: 450px) {
+  #quienesS {
+    height: auto;
+  }
+  #sobreN {
+    height: auto;
+  }
 }/*# sourceMappingURL=rosco.css.map */

@@ -443,6 +443,71 @@ footer{
     margin: auto 0px auto;
 }
 
+
+
+
+
+
+
+//JUGADOR
+#abrirPlayer{
+    cursor: pointer;
+}
+#abrirPlayer:hover{
+    text-decoration: underline;
+}
+#modalJugador{
+    background-color: $azul;    
+    border: solid 1px $oscuro;
+    width: 40vw;
+    min-width: 280px;
+    height: 40vh;
+    margin: 20vh 20vw;
+    position:absolute;
+    top: 0;
+    left: 0;
+    border-radius:20px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 1s;
+    transition: transform 0.3s;
+    h2{
+        margin: 0px;
+        margin-bottom: 25px;
+    }
+    button{
+        background-color: white;
+        border:1px solid $oscuro;
+    }
+    button:hover{
+        background-color: $oscuro;
+        color: white;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #sobreN{
     background-color: $azul;
     width: 80vw;
@@ -482,3 +547,12 @@ footer{
     transition: opacity 1s;
     transition: transform 0.3s;
 }
+@media all and (max-width:450px) {
+    #quienesS{
+        height: auto;
+    }
+    #sobreN{
+        height: auto;
+    }
+}
+

@@ -1,5 +1,15 @@
 //DEFINIR JUGADOR
-let player = "Invitado"; //falta la funcionalidad jugar como registrado;
+let player = sessionStorage.getItem('user');
+// let player = "Invitado"; //falta la funcionalidad jugar como registrado;
+let dondeUser = document.querySelectorAll(".ponerNombre");
+if(player != '' && player != undefined){
+  dondeUser.forEach(elem =>{
+    elem.innerHTML=player;
+  })
+} else{
+  player = "Invitado";
+}
+
 
 //CREAR PARTIDA
 let partidas;

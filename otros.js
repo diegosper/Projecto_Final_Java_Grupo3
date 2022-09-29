@@ -19,3 +19,25 @@ let cerrarQuienes = () =>{
     quienes.style.transform = "scale(0)";
     quienes.style.opacity = "0";
 }
+
+let desplegarJugador = () =>{
+    let modalJugador = document.querySelector("#modalJugador");
+    modalJugador.style.transform = "scale(1)";
+    modalJugador.style.opacity = "1";
+}
+let cerrarJug = () =>{
+    let modalJugador = document.querySelector("#modalJugador");
+    modalJugador.style.transform = "scale(0)";
+    modalJugador.style.opacity = "0";
+}
+let cerrarSesion = () => {
+    let cerrarSesion = document.querySelector("#cerrarSesion");
+    sessionStorage.setItem('user', `Invitado`)
+    window.location.replace("index.html");
+
+
+
+}
+
+
+
