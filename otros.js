@@ -31,12 +31,8 @@ let cerrarJug = () =>{
     modalJugador.style.opacity = "0";
 }
 let cerrarSesion = () => {
-    let cerrarSesion = document.querySelector("#cerrarSesion");
     sessionStorage.setItem('user', `Invitado`)
     window.location.replace("index.html");
-
-
-
 }
 
 
