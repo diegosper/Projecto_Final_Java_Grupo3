@@ -1,143 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rosco</title>
-    <link rel="stylesheet" href="css\rosco.css" />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;600;700&family=Orbitron:wght@500&family=Rampart+One&display=swap"
-      rel="stylesheet"
-    />
-    <!-- script -->
-    <script src="classes.js"></script>
-    <script src="crearRosco.js" defer></script>
-    <script src="main.js" defer></script>
-    <script src="otros.js" defer></script>
-  </head>
 
-  <body onresize="moverCirculos()">
-    <div class="cont_p_rosco">
-      <header id="headerRosco" style="background-color: rgb(254, 138, 138)">
-        <h1><a href="index.html">El Rosquete</a></h1>
-        <div id="ic_jugador">
-          <p>Invitado</p>
-          <img src="./img/profile-user.png" alt="" class="icoJugador" />
-        </div>
-      </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rosco</title>
+  <link rel="stylesheet" href="css\rosco.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;600;700&family=Orbitron:wght@500&family=Rampart+One&display=swap"
+    rel="stylesheet" />
+  <!-- script -->
+  <script src="classes.js"></script>
+  <script src="crearRosco.js" defer></script>
+  <script src="main.js" defer></script>
+  <script src="otros.js" defer></script>
+</head>
 
-      <div id="roscoCentrar">
-        <section id="cont_rosco">
-          <div id="contenedorDef">
-            <p id="definicion"></p>
-          </div>
-        </section>
+<body onresize="moverCirculos()">
+  <div class="cont_p_rosco">
+    <header id="headerRosco" style="background-color: rgb(254, 138, 138)">
+      <h1><a href="index.html">El Rosquete</a></h1>
+      <div id="ic_jugador">
+        <p>Invitado</p>
+        <img src="./img/profile-user.png" alt="" class="icoJugador" />
       </div>
-      <div class="circuloFake circle"></div>
+    </header>
 
-      <section id="definiciones">
-        <div class="disFlex">
-          <img src="img\hourglass.png" alt="" class="icoJugador" />
-          <p id="crono">00:00</p>
-        </div>
-
-        <div>
-          <div class="centerMobile">
-            <label for="respuesta" id="labelRespuesta">Respuesta: </label>
-            <input
-              id="respuesta"
-              name="respuesta"
-              type="text"
-              placeholder="Tu respuesta"
-            />
-          </div>
-
-          <div class="br"></div>
-          <div class="centerMobile">
-            <button type="submit" id="bOk" onclick="ok()">OK</button>
-            <button id="bPaso" onclick="paso()">Paso!</button>
-          </div>
-        </div>
-      </section>
-
-      <section id="cont_palabras">
-        <div id="palabras">
-          <h3 class="hPalabras">Palabras</h3>
-          <div class="flexpal">
-            <p class="palabra" id="pA">A: <span>?????</span></p>
-            <p class="palabra" id="pB">B: <span>?????</span></p>
-            <p class="palabra" id="pC">C: <span>?????</span></p>
-            <p class="palabra" id="pD">D: <span>?????</span></p>
-            <p class="palabra" id="pE">E: <span>?????</span></p>
-            <p class="palabra" id="pF">F: <span>?????</span></p>
-            <p class="palabra" id="pG">G: <span>?????</span></p>
-            <p class="palabra" id="pH">H: <span>?????</span></p>
-            <p class="palabra" id="pI">I: <span>?????</span></p>
-            <p class="palabra" id="pJ">J: <span>?????</span></p>
-            <p class="palabra" id="pK">K: <span>?????</span></p>
-            <p class="palabra" id="pL">L: <span>?????</span></p>
-            <p class="palabra" id="pM">M: <span>?????</span></p>
-            <p class="palabra" id="pN">N: <span>?????</span></p>
-            <p class="palabra" id="pO">O: <span>?????</span></p>
-            <p class="palabra" id="pP">P: <span>?????</span></p>
-            <p class="palabra" id="pQ">Q: <span>?????</span></p>
-            <p class="palabra" id="pR">R: <span>?????</span></p>
-            <p class="palabra" id="pS">S: <span>?????</span></p>
-            <p class="palabra" id="pT">T: <span>?????</span></p>
-            <p class="palabra" id="pU">U: <span>?????</span></p>
-            <p class="palabra" id="pV">V: <span>?????</span></p>
-            <p class="palabra" id="pW">W: <span>?????</span></p>
-            <p class="palabra" id="pX">X: <span>?????</span></p>
-            <p class="palabra" id="pY">Y: <span>?????</span></p>
-            <p class="palabra" id="pZ">Z: <span>?????</span></p>
-          </div>
+    <div id="roscoCentrar">
+      <section id="cont_rosco">
+        <div id="contenedorDef">
+          <p id="definicion"></p>
         </div>
       </section>
     </div>
+    <div class="circuloFake circle"></div>
 
-    <footer id="footerRosco" style="background-color: rgb(254, 254, 110)">
-      <button id="sobre" onclick="abrirSobre()">Sobre el proyecto</button>
-      <button id="quienes" onclick="abrirQuienes()">¿Quienes somos?</button>
-    </footer>
+    <section id="definiciones">
+      <div class="disFlex">
+        <img src="img\hourglass.png" alt="" class="icoJugador" />
+        <p id="crono">00:00</p>
+      </div>
 
-    <!-- Pantalla que aparece cuando acaba el juego -->
-    <div id="pantallaResultado" class="pantalla">
-      <h2 class="text_center">Fin del juego</h2>
-      <h3 class="text_center">Puntuacion</h3>
-      <p class="text_center">Jugador: Invitado</p>
-      <ul class="text_center">
-        <li>Aciertos: <span id="r_aciertos">0</span></li>
-        <li>Errores: <span id="r_errores">0</span></li>
-        <li>Tiempo: <span id="r_tiempo">0</span></li>
-      </ul>
-      <p class="text_center">
-        <strong>Puntuacion total:</strong>
-        <span id="r_puntuacion">1.00000</span>
-      </p>
-      <button onclick="volverJugar()">Volver a jugar</button>
-    </div>
+      <div>
+        <div class="centerMobile">
+          <label for="respuesta" id="labelRespuesta">Respuesta: </label>
+          <input id="respuesta" name="respuesta" type="text" placeholder="Tu respuesta" />
+        </div>
+
+        <div class="br"></div>
+        <div class="centerMobile">
+          <button type="submit" id="bOk" onclick="ok()">OK</button>
+          <button id="bPaso" onclick="paso()">Paso!</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="cont_palabras">
+      <div id="palabras">
+        <h3 class="hPalabras">Palabras</h3>
+        <div class="flexpal">
+          <p class="palabra" id="pA">A: <span>?????</span></p>
+          <p class="palabra" id="pB">B: <span>?????</span></p>
+          <p class="palabra" id="pC">C: <span>?????</span></p>
+          <p class="palabra" id="pD">D: <span>?????</span></p>
+          <p class="palabra" id="pE">E: <span>?????</span></p>
+          <p class="palabra" id="pF">F: <span>?????</span></p>
+          <p class="palabra" id="pG">G: <span>?????</span></p>
+          <p class="palabra" id="pH">H: <span>?????</span></p>
+          <p class="palabra" id="pI">I: <span>?????</span></p>
+          <p class="palabra" id="pJ">J: <span>?????</span></p>
+          <p class="palabra" id="pK">K: <span>?????</span></p>
+          <p class="palabra" id="pL">L: <span>?????</span></p>
+          <p class="palabra" id="pM">M: <span>?????</span></p>
+          <p class="palabra" id="pN">N: <span>?????</span></p>
+          <p class="palabra" id="pO">O: <span>?????</span></p>
+          <p class="palabra" id="pP">P: <span>?????</span></p>
+          <p class="palabra" id="pQ">Q: <span>?????</span></p>
+          <p class="palabra" id="pR">R: <span>?????</span></p>
+          <p class="palabra" id="pS">S: <span>?????</span></p>
+          <p class="palabra" id="pT">T: <span>?????</span></p>
+          <p class="palabra" id="pU">U: <span>?????</span></p>
+          <p class="palabra" id="pV">V: <span>?????</span></p>
+          <p class="palabra" id="pW">W: <span>?????</span></p>
+          <p class="palabra" id="pX">X: <span>?????</span></p>
+          <p class="palabra" id="pY">Y: <span>?????</span></p>
+          <p class="palabra" id="pZ">Z: <span>?????</span></p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer id="footerRosco" style="background-color: rgb(254, 254, 110)">
+    <button id="sobre" onclick="abrirSobre()">Sobre el proyecto</button>
+    <button id="quienes" onclick="abrirQuienes()">¿Quienes somos?</button>
+  </footer>
+
+  <!-- Pantalla que aparece cuando acaba el juego -->
+  <div id="pantallaResultado" class="pantalla">
+    <h2 class="text_center">Fin del juego</h2>
+    <h3 class="text_center">Puntuacion</h3>
+    <p class="text_center">Jugador: Invitado</p>
+    <ul class="text_center">
+      <li>Aciertos: <span id="r_aciertos">0</span></li>
+      <li>Errores: <span id="r_errores">0</span></li>
+      <li>Tiempo: <span id="r_tiempo">0</span></li>
+    </ul>
+    <p class="text_center">
+      <strong>Puntuacion total:</strong>
+      <span id="r_puntuacion">1.00000</span>
+    </p>
+    <button onclick="volverJugar()">Volver a jugar</button>
+  </div>
 
 
 
-    <!-- Pantalla sobre el proyecto -->
-    <div id="sobreN">
-      <button style="position:absolute; top:30px; right:30px; font-size:28px" onclick="cerrarSobre()">&#10006;</button>
-      <h2>Sobre el proyecto:</h2>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam doloremque voluptatum quas architecto iste tempore harum rem sequi, impedit molestiae natus accusantium asperiores totam quia perferendis voluptates atque a quibusdam.</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus aut earum placeat, quibusdam dolore non. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, tenetur?</p>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad magni, sint aspernatur nulla explicabo aperiam vero tempora similique fugiat quisquam. Voluptatum officia impedit inventore aliquid consectetur optio nam quidem, nesciunt doloremque dolores animi amet maxime, hic magnam unde veritatis voluptatibus magni iusto! Earum, totam dicta explicabo accusamus autem deleniti officia fuga.</p>
-    </div>
-    <!-- Pantalla quienes somos -->
-    <div id="quienesS">
-      <button style="position:absolute; top:30px; right:30px; font-size:28px" onclick="cerrarQuienes()">&#10006;</button>
-      <h2>Quienes Somos?</h2>
-      <p>Somos un grupo que queremos enseñar a otros jóvenes lo que nos hubiera gustado que nos enseñaran en su momento.</p>
-      <p>Jordi ~ Noelia ~ Alejandra ~ Diego</p>
-    </div>
+  <!-- Pantalla sobre el proyecto -->
+  <div id="sobreN">
+    <button style="position:absolute; top:30px; right:30px; font-size:28px" onclick="cerrarSobre()">&#10006;</button>
+    <h2>Sobre el proyecto:</h2>
+    <p>Nuestro proyecto trata de enseñar a los jóvenes como nosotros o estudiantes de secundaria un poco más sobre el
+      mundo que les tocará vivir solos en un futuro no muy lejano. Por eso hemos hecho este mini juego para que puedan
+      aprender un par de conceptos básicos sin la necesidad de estamparse con esta pared en un futuro o de tener que
+      buscar por todos lados para saber lo que es.</p>
+  </div>
+  <!-- Pantalla quienes somos -->
+  <div id="quienesS">
+    <button style="position:absolute; top:30px; right:30px; font-size:28px" onclick="cerrarQuienes()">&#10006;</button>
+    <h2>Quienes Somos?</h2>
+    <p>Somos un grupo que queremos enseñar a otros jóvenes lo que nos hubiera gustado que nos enseñaran en su momento.
+    </p>
+    <p>Jordi ~ Noelia ~ Alejandra ~ Diego</p>
+  </div>
 
-  </body>
+</body>
+
 </html>
