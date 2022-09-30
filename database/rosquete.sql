@@ -81,7 +81,8 @@ INSERT INTO db_rosquete.words VALUES
 ('23','tardes','6','nadaqueverW','w'),
 ('24','atodos','7','nadaqueverX','x'),
 ('25','solamente','8','nadaqueverY','y'),
-('26','awiiiiiitah','5','nadaqueverZ','z');
+('26','awiiiiiitah','5','nadaqueverZ','z'),
+('27','educacion','8','Derecho básico de todos los niños, niñas y adolescentes, que les proporciona habilidades y conocimientos necesarios para desarrollarse como adultos','e');
 
 
 SELECT * FROM users;
