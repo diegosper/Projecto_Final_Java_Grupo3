@@ -65,8 +65,8 @@ INSERT INTO db_rosquete.words VALUES
 ('7','gastos','4','Dinero que gastas en necesidades diarias','g'),
 ('8','hipocampo','8','Donde se produce el aprendizaje emocional y se almacenan los recuerdos emocionales, da respuesta emocional a las sensaciones','h'),
 ('9','inversión','4','Invertir es, de manera resumida, el proceso de comprar activos que aumentan de valor con el tiempo y proporcionan rendimientos en forma de pagos de ingresos o ganancias de capital.','i'),
-('10','hola','2','nadaqueverJ','j'),
-('11','buenas','4','nadaqueverK','k'),
+('10','jubilacion','4','cuando llegas a cierta edad puedes dejar de trabajar y vivir de lo que has cotizado los últimos años','j'),
+('11','Soft Skills','4','se pueden definir como las aptitudes sociales, emocionales, resolutivas y de comportamiento que permiten desenvolverte mejor y obtener mejores resultados en cualquier situación.','k'),
 ('12','licencia','2','Para poder circular libremente con vehículos a motor y ciclomotores debes disponer previamente de la autorización pertinente, certificando así tener los requisitos de capacidad, conocimiento y habilidad necesarios para conducir dicho vehículo.','l'),
 ('13','empoderamiento','6','Transformación de las relaciones de poder, que permite a aquellas/os que les son negados, ampliar sus aspiraciones, fortalecer su voz y ejercer su capacidad de decidir','m'),
 ('14','nómina','4','Documento que detalla tus periodos de liquidación, percepciones, deducciones, bases de cotización.','n'),
@@ -78,11 +78,18 @@ INSERT INTO db_rosquete.words VALUES
 ('20','plástico','1','Impactan en el medioambiente desde su fabricación hasta su manipulación como desechos.','t'),
 ('21','polución','1','Se compone de muchos tipos de gases, gotitas y partículas que reducen la calidad el aire','u'),
 ('22','biodiversidad','1','Diversidad de seres vivos sobre la Tierra como las plantas, animales, microorganismos o también la variedad de ecosistemas.','v'),
-('23','tardes','6','nadaqueverW','w'),
-('24','atodos','7','nadaqueverX','x'),
-('25','solamente','8','nadaqueverY','y'),
-('26','awiiiiiitah','5','nadaqueverZ','z'),
-('27','educacion','8','Derecho básico de todos los niños, niñas y adolescentes, que les proporciona habilidades y conocimientos necesarios para desarrollarse como adultos','e');
+('23','Workaholic','8','adiccion al trabajo','w'),
+('24','expediente laboral','4','Es el conjunto de documentos que contienen información del trabajador en diferentes ámbitos, que van desde el personal, de trayectoria laboral, competencias técnicas y profesionales y cualquier situación con el trabajador, derivada de la relación laboral, que necesite ser registrada.','x'),
+('25','ayuntamiento','8','lugar al que vas a hacer tus tramites y esperas la vida','y'),
+('26','indemnizacion','8','Compensación económica destinada a reparar, garantizando su indemnidad, al afectado por la privación (expropiación) de un bien o derecho, por un perjuicio provocado por un tercero (en concepto de responsabilidad) o por un gasto en que ha incurrido por razón ajena a su voluntad.','z'),
+('27','insulina','8','es una hormona liberada por el páncreas como respuesta a la presencia de glucosa en la sangre.','i'),
+('28','presupuesto','8','hace referencia a la cantidad de dinero que se necesita para hacer frente a cierto número de gastos necesarios para acometer un proyecto.','p'),
+('29','alcázar','5','Castillo fortificado situado en un lugar estratégico, especialmente cuando está amurallado.','a'),
+('30','balneario','5','De los baños públicos, especialmente los medicinales y curativos, o que tiene relación con estos lugares o establecimientos','b'),
+('31','cicloturismo','5','Modalidad de turismo en la que se emplea la bicicleta como medio de transporte.','c'),
+('32','Vialidad','2','contiene la D: Acondicionamiento de vías públicas.','d'),
+('33','peatonal','2','contiene la E: Zona de intersección de la calzada habilitada para que crucen los peatones y ante la que los conductores de vehículos o animales deben detenerse para ceder el paso.','e'),
+('34','educacion','8','Derecho básico de todos los niños, niñas y adolescentes, que les proporciona habilidades y conocimientos necesarios para desarrollarse como adultos','e');
 
 
 SELECT * FROM users;
