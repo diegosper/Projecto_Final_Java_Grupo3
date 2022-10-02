@@ -56,16 +56,16 @@ INSERT INTO db_rosquete.category VALUES
 ('8','salud y bienestar');
 
 INSERT INTO db_rosquete.words VALUES
-('1','amigdala','8','Considerada el centro del control emocional del cerebro','a'),
+('1','Amígdala','8','Considerada el centro del control emocional del cerebro','a'),
 ('2','beca','4','Ayuda economica fruto del esfuerzo estudiantil','b'),
 ('3','coaching','3','Entrenamiento que ayuda a una persona en la exploración y descubrimiento de nuevas creencias para optimizar su vida','c'),
 ('4','patriarcado','6','Forma tradicional de organización social que suele ser la base de la desigualdad de género','d'),
 #('5','emocion','3','Reacciones psicofisiológicas que representan modos de adaptación del individuo cuando percibe un objeto, persona, lugar, suceso o recuerdo importante','e'),
 ('6','clorofluorocarbonos','8','Gases sintéticos que destruyen la capa de ozono de la estratosfera, incrementando por tanto la exposición de la tierra a los dañinos rayos ultravioletas.','f'),
-#('7','gastos','4','Dinero que gastas en necesidades diarias','g'),
+('7','gastos','4','Dinero que gastas en necesidades diarias','g'),
 ('8','hipocampo','8','Donde se produce el aprendizaje emocional y se almacenan los recuerdos emocionales, da respuesta emocional a las sensaciones','h'),
-('9','inversión','4','Invertir es, de manera resumida, el proceso de comprar activos que aumentan de valor con el tiempo y proporcionan rendimientos en forma de pagos de ingresos o ganancias de capital.','i'),
-#('10','jubilacion','4','cuando llegas a cierta edad puedes dejar de trabajar y vivir de lo que has cotizado los últimos años','j'),
+#('9','inversión','4','Invertir es, de manera resumida, el proceso de comprar activos que aumentan de valor con el tiempo y proporcionan rendimientos en forma de pagos de ingresos o ganancias de capital.','i'),
+#('10','jubilación','4','cuando llegas a cierta edad puedes dejar de trabajar y vivir de lo que has cotizado los últimos años','j'),
 ('11','soft skills','4','(En inglés) Se pueden definir como las aptitudes sociales, emocionales, resolutivas y de comportamiento que permiten desenvolverte mejor y obtener mejores resultados en cualquier situación.','k'),
 ('12','licencia','2','Para poder circular libremente con vehículos a motor y ciclomotores debes disponer previamente de la autorización pertinente, certificando así tener los requisitos de capacidad, conocimiento y habilidad necesarios para conducir dicho vehículo.','l'),
 ('13','empoderamiento','6','Transformación de las relaciones de poder, que permite a aquellas/os que les son negados, ampliar sus aspiraciones, fortalecer su voz y ejercer su capacidad de decidir','m'),
@@ -89,9 +89,9 @@ INSERT INTO db_rosquete.words VALUES
 ('31','cicloturismo','5','Modalidad de turismo en la que se emplea la bicicleta como medio de transporte.','c'),
 ('32','Vialidad','2','contiene la D: Acondicionamiento de vías públicas.','d'),
 #('33','peatonal','2','contiene la E: Zona de intersección de la calzada habilitada para que crucen los peatones y ante la que los conductores de vehículos o animales deben detenerse para ceder el paso.','e'),
-('34','educacion','8','Derecho básico de todos los niños, niñas y adolescentes, que les proporciona habilidades y conocimientos necesarios para desarrollarse como adultos, y cuyo sistema de enseñanza no se ha modificado desde la revolución industrial','e'),
-('35','jugar','8','Acción de ','j'),
-('36','grupo','8','Conjunto de personas que, estando coordinadas y con un objetivo, pueden conformar un equipo','g');
+('34','Educación','8','Derecho básico de todos los niños, niñas y adolescentes, que les proporciona habilidades y conocimientos necesarios para desarrollarse como adultos, y cuyo sistema de enseñanza no se ha modificado desde la revolución industrial','e'),
+('35','Jugar','8','Acción de realizar algo con alegría para distraerse o también para  incrementar o desarrollar capacidades. Lo importante en este caso, es divertirse, hacerlo con placer. ','j'),
+('36','Equipo','8','Contiene I: Conjunto de personas que tienen un objetivo común, e interactúan y se coordinan para conseguirlo','i');
 
 
 SELECT * FROM users;
