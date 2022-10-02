@@ -88,7 +88,7 @@ INSERT INTO db_rosquete.words VALUES
 ('30','balneario','5','De los baños públicos, especialmente los medicinales y curativos, o que tiene relación con estos lugares o establecimientos','b'),
 ('31','cicloturismo','5','Modalidad de turismo en la que se emplea la bicicleta como medio de transporte.','c'),
 ('32','Vialidad','2','contiene la D: Acondicionamiento de vías públicas.','d'),
-('33','peatonal','2','contiene la E: Zona de intersección de la calzada habilitada para que crucen los peatones y ante la que los conductores de vehículos o animales deben detenerse para ceder el paso.','e'),
+#('33','peatonal','2','contiene la E: Zona de intersección de la calzada habilitada para que crucen los peatones y ante la que los conductores de vehículos o animales deben detenerse para ceder el paso.','e'),
 ('34','educacion','8','Derecho básico de todos los niños, niñas y adolescentes, que les proporciona habilidades y conocimientos necesarios para desarrollarse como adultos, y cuyo sistema de enseñanza no se ha modificado desde la revolución industrial','e'),
 ('35','jugar','8','Acción de ','j'),
 ('36','grupo','8','Conjunto de personas que, estando coordinadas y con un objetivo, pueden conformar un equipo','g');
