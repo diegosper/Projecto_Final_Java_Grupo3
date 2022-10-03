@@ -59,7 +59,6 @@ async function userLogin() {
     if (res != "") {
 
 
-        alert(`Bienvenido ${userIntro}!!`);
         console.log(res);
         sessionStorage.setItem('user', `${userIntro}`)
         window.location.assign("http://localhost:5500/rosco.html");

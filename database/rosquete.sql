@@ -56,20 +56,20 @@ INSERT INTO db_rosquete.category VALUES
 ('8','salud y bienestar');
 
 INSERT INTO db_rosquete.words VALUES
-('1','Amígdala','8','Considerada el centro del control emocional del cerebro','a'),
-('2','beca','4','Ayuda economica fruto del esfuerzo estudiantil','b'),
-('3','coaching','3','Entrenamiento que ayuda a una persona en la exploración y descubrimiento de nuevas creencias para optimizar su vida','c'),
-('4','patriarcado','6','Forma tradicional de organización social que suele ser la base de la desigualdad de género','d'),
-#('5','emocion','3','Reacciones psicofisiológicas que representan modos de adaptación del individuo cuando percibe un objeto, persona, lugar, suceso o recuerdo importante','e'),
-('6','clorofluorocarbonos','8','Gases sintéticos que destruyen la capa de ozono de la estratosfera, incrementando por tanto la exposición de la tierra a los dañinos rayos ultravioletas.','f'),
-('7','gastos','4','Dinero que gastas en necesidades diarias','g'),
-('8','hipocampo','8','Donde se produce el aprendizaje emocional y se almacenan los recuerdos emocionales, da respuesta emocional a las sensaciones','h'),
-#('9','inversión','4','Invertir es, de manera resumida, el proceso de comprar activos que aumentan de valor con el tiempo y proporcionan rendimientos en forma de pagos de ingresos o ganancias de capital.','i'),
-#('10','jubilación','4','cuando llegas a cierta edad puedes dejar de trabajar y vivir de lo que has cotizado los últimos años','j'),
-('11','soft skills','4','(En inglés) Se pueden definir como las aptitudes sociales, emocionales, resolutivas y de comportamiento que permiten desenvolverte mejor y obtener mejores resultados en cualquier situación.','k'),
-('12','licencia','2','Para poder circular libremente con vehículos a motor y ciclomotores debes disponer previamente de la autorización pertinente, certificando así tener los requisitos de capacidad, conocimiento y habilidad necesarios para conducir dicho vehículo.','l'),
-('13','empoderamiento','6','Transformación de las relaciones de poder, que permite a aquellas/os que les son negados, ampliar sus aspiraciones, fortalecer su voz y ejercer su capacidad de decidir','m'),
-('14','nomina','4','Documento que detalla tus periodos de liquidación, percepciones, deducciones, bases de cotización.','n'),
+('1','Airbag','2','Forma parte del sistema de seguridad pasiva de los vehículos. En caso de colisión violenta se infla de modo explosivo amortiguando el impacto de sus ocupantes','a'),
+('2','Beca','4','Ayuda económica procedente de fondos públicos o privados que se concede a una persona para pagar total o parcialmente los gastos que le supone cursar unos estudios o desarrollar un proyecto de investigación','b'),
+('3','Coaching','3','Forma de desarrollo personal en la cual una persona con experiencia apoya a un alumno o cliente a lograr un objetivo personal o profesional al brindarle capacitación y orientación.​','c'),
+('4','Patriarcado','6','Predominio de la autoridad que ejerce un varón sobre un grupo de personas o sociedad, específicamente sobre las mujeres y los niños. Asociado a la desigualdad de género','p'),
+('5','Emoción','3','Reacciones psicofisiológicas que representan modos de adaptación del individuo cuando percibe un objeto, persona, lugar, suceso o recuerdo importante','e'),
+('6','Fauna','1','Conjunto de especies animales que habitan en una región geográfica, que son propias de un período geológico o que se pueden encontrar en un ecosistema determinado','f'),
+('7','Gasolina','1','Combustible fósil obtenido del petróleo. Cuando se incinera, produce emisiones de dióxido de carbono (CO2), hidrocarburos (HC) y oxido de nitrógeno (NOx), entre otros','g'),
+('8','Hipoteca','4','Préstamo tomado con el respaldo económico de una propiedad. Permite a los consumidores comprar propiedades y pagarlas durante un período, por lo general entre 15 y 30 años','h'),
+('9','Inflación','4','Aumento en el precio en dinero de los bienes y servicios que ocurre a lo largo del tiempo. Se trata de un proceso económico, en donde se produce un desequilibrio entre la producción y la demanda.','i'),
+('10','Jubilado','4','Persona que no trabaja y goza de una pensió obtenida por su actividad económica anterior al cesar en el trabajo a causa de su edad','j'),
+('11','Karma','3','En la religión budista y en el hinduismo, creencia según la cual toda acción tiene una fuerza dinámica que se expresa e influye en las sucesivas existencias del individuo','k'),
+('12','Legislación','7','Conjunto de normas y leyes que regulan las relaciones entre las personas de un país o de un sector determinado','l'),
+('13','Empoderamiento','6','Adquisición de poder e independencia por parte de un grupo social desfavorecido para mejorar su situación','e'),
+('14','Nómina','4','Documento que detalla tus periodos de liquidación, percepciones, deducciones, bases de cotización.','n'),
 ('15','oratoria','3','Cómo hablar en publico y expresar sus ideas','o'),
 ('16','paro','4','Subvencion que te da el Estado cuando te quedas desempleado','p'),
 ('17','quinoa','8','Super alimento que se conoce y se clasifica como un grano integral','q'),
@@ -84,14 +84,24 @@ INSERT INTO db_rosquete.words VALUES
 ('26','indemnizacion','8','Compensación económica destinada a reparar, garantizando su indemnidad, al afectado por la privación (expropiación) de un bien o derecho, por un perjuicio provocado por un tercero (en concepto de responsabilidad) o por un gasto en que ha incurrido por razón ajena a su voluntad.','z'),
 ('27','insulina','8','es una hormona liberada por el páncreas como respuesta a la presencia de glucosa en la sangre.','i'),
 ('28','presupuesto','8','hace referencia a la cantidad de dinero que se necesita para hacer frente a cierto número de gastos necesarios para acometer un proyecto.','p'),
-('29','alcázar','5','Castillo fortificado situado en un lugar estratégico, especialmente cuando está amurallado.','a'),
+('29','Androcentrismo', '6','Enfoque que coloca la mirada masculina en el centro del universo, como medida de todas las cosas y representación global de la humanidad, ocultando otras realidades, entre ellas la de la mujer','a'),
 ('30','balneario','5','De los baños públicos, especialmente los medicinales y curativos, o que tiene relación con estos lugares o establecimientos','b'),
 ('31','cicloturismo','5','Modalidad de turismo en la que se emplea la bicicleta como medio de transporte.','c'),
 ('32','Vialidad','2','contiene la D: Acondicionamiento de vías públicas.','d'),
 #('33','peatonal','2','contiene la E: Zona de intersección de la calzada habilitada para que crucen los peatones y ante la que los conductores de vehículos o animales deben detenerse para ceder el paso.','e'),
 ('34','Educación','8','Derecho básico de todos los niños, niñas y adolescentes, que les proporciona habilidades y conocimientos necesarios para desarrollarse como adultos, y cuyo sistema de enseñanza no se ha modificado desde la revolución industrial','e'),
 ('35','Jugar','8','Acción de realizar algo con alegría para distraerse o también para  incrementar o desarrollar capacidades. Lo importante en este caso, es divertirse, hacerlo con placer. ','j'),
-('36','Equipo','8','Contiene I: Conjunto de personas que tienen un objetivo común, e interactúan y se coordinan para conseguirlo','i');
+('36','Equipo','8','Contiene I: Conjunto de personas que tienen un objetivo común, e interactúan y se coordinan para conseguirlo','i'),
+('37','Atmósfera','1','Capa gaseosa que rodea la Tierra y otros cuerpos celestes','a'),
+('38','Autopista','2','Vía que permite desplazamientos de larga distancia entre ciudades o dentro de éstas. Sus calzadas están separadas físicamente y segregadas de su entorno, sus accesos limitados a ciertos puntos','a'),
+('39','Cuota','4','Parte o porción fija y proporcional que se paga por un servicio','c'),
+('40','Fotosíntesis','1','Proceso por el cual las plantas verdes transforman la energía solar en energía química, produciendo oxígeno y azúcares a partir de dióxido de carbono y agua.','f'),
+('41','Motivación','3','Grado de interés que tiene una persona por realizar una actividad en sí misma o por su finalidad última. Impulso del ser humano para satisfacer sus necesidades','m'),
+('42','Optimismo','3','Predisposición a entender y a analizar la realidad desde su aspecto más positivo. Actitud que impide caer en la apatía, la desesperación o la depresión frente a las adversidades','o'),
+('43','Mutual','4','Entidad constituida libremente, sin fines de lucro, por un grupo de personas con el objeto de brindarse solidariamente ayuda recíproca frente a riesgos eventuales o de brindarse servicios','m');
+
+
+
 
 
 SELECT * FROM users;
